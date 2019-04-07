@@ -1,0 +1,1 @@
+db.districts.aggregate([{$match:{id:110000}}, {$graphLookup: {from: "districts", startWith: "$id", connectFromField:"id", connectToField: "supervisorid", as: "children" }} ])

@@ -13,7 +13,7 @@ services:
         image: adminer
         restart: always
         ports:
-        - 8080:8080
+        - 8082:8080
 
     redis:
         build: images/redis
@@ -31,6 +31,8 @@ services:
             MONGO_INITDB_ROOT_USERNAME: root
             MONGO_INITDB_ROOT_PASSWORD: "iCOVX-Gj7WqlH4Z"
             MONGO_INITDB_DATABASE: criminalquery
+        ports: 
+            - 27017:27017
 
     mongo-express:
         image: mongo-express
@@ -40,3 +42,15 @@ services:
         environment:
             ME_CONFIG_MONGODB_ADMINUSERNAME: root
             ME_CONFIG_MONGODB_ADMINPASSWORD: "iCOVX-Gj7WqlH4Z"
+
+    # nginx:
+    #     image: nginx
+    #     volumes:
+    #         - ./data/nginx:/usr/share/nginx/html:ro
+    #         - ./images/nginx/criminal.conf:/etc/nginx/conf.d/criminal.conf
+    #         - ./images/nginx/ssl:/etc/nginx/ssl
+    #     ports:
+    #         - "80:80"
+    #     environment:
+    #         - NGINX_HOST=criminal.local
+    #         - NGINX_PORT=80

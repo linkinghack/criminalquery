@@ -145,6 +145,7 @@ CREATE TABLE public.b_wanted_orders (
     i_arrest_level integer NOT NULL,
     i_arrest_status integer NOT NULL,
     i_district_id integer NOT NULL,
+    i_created_by integer NOT NULL,
     ts_created_at timestamp default now() NOT NULL,
     ts_updated_at timestamp default now() NOT NULL,
     PRIMARY KEY (i_id)

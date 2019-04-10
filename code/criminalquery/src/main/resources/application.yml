@@ -24,6 +24,9 @@ mybatis:
   config-location:
     - "classpath*:mybatis-config.xml"
 
+logging:
+  file:
+
 criminal:
   cos:
     appid: "asdlkfjlkw3jr2kl3"

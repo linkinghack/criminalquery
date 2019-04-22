@@ -1,12 +1,18 @@
 package com.linkinghack.criminalquery.service;
 
+import ch.qos.logback.core.util.InvocationGate;
+import com.linkinghack.criminalquery.TransferModel.UniversalResponse;
 import com.linkinghack.criminalquery.dao.mapper.DistrictMapper;
 import com.linkinghack.criminalquery.model.District;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.List;
 
 @Service
 public class DistrictService {
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private final DistrictMapper mapper;
 
     @Autowired
@@ -18,4 +24,28 @@ public class DistrictService {
         return mapper.selectDistrictById(id);
     }
 
+    public UniversalResponse districtsByLevel(Integer level) {
+        if (level > 3 || level < 0)
+            return UniversalResponse.UserFail("参数错误");
+        else
+            try{
+                List<District> districtList = mapper.selectDistrictsByLevel(level);
+                return UniversalResponse.Ok(districtList);
+            }catch (Exception e) {
+                logger.error("@DistrictService.districtsByLevel: An error occurred. {}", e.getMessage());
+                e.printStackTrace();
+                return UniversalResponse.ServerFail(e.getMessage());
+            }
+    }
+
+    public UniversalResponse getSubDistricts(Integer id) {
+        try {
+            List<District> districts = mapper.findSubDistricts(id);
+            return UniversalResponse.Ok(districts);
+        }catch (Exception e) {
+            logger.error("@DistrictsService.getSubDistricts: An error occurred. {}", e.getMessage());
+            e.printStackTrace();
+            return UniversalResponse.ServerFail(e.getMessage());
+        }
+    }
 }

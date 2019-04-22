@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.linkinghack.criminalquery.dao.mapper.DepartmentMapper">
+    <resultMap id="department" type="com.linkinghack.criminalquery.model.Department">
+        <id column="did" property="id" javaType="Integer"/>
+        <result column="ch_department_name" property="departmentName"/>
+        <result column="i_supervisor_id" property="supervisorID"/>
+        <result column="i_level" property="level"/>
+        <result column="i_district_id" property="districtID"/>
+        <result column="district_name" property="districtName" />
+        <result column="members_count" property="membersCount" />
+    </resultMap>
+    
+    <resultMap id="departmentForTree" type="com.linkinghack.criminalquery.TransferModel.DepartmentForTree">
+        <id column="i_id" property="id" javaType="Integer" />
+        <result column="pId" property="pId" javaType="Integer" />
+        <result column="label" property="label" javaType="String" />
+        <result column="value" property="value" javaType="Integer" />
+    </resultMap>
+    
+    <select id="getDepartmentByLevelForTree" resultMap="departmentForTree" >
+        select i_id, i_supervisor_id as pId, ch_department_name as label, i_id as value from b_departments
+        where i_level = #{level}
+    </select>
+
+    <select id="membersCount" resultType="Integer">
+        select count(*) from b_departments inner join b_users on b_users.i_department_id = b_departments.i_id
+        where b_departments.i_id = #{ID}
+    </select>
+
+    <select id="departmentsOfDistrict" resultMap="department" >
+        select de.i_id as did, ch_department_name, de.i_supervisor_id as i_supervisor_id, de.i_level as i_level,
+               i_district_id, di.ch_name as district_name
+        from b_departments as de
+                 left join b_districts as di on de.i_district_id = di.i_id
+        where  #{districtID} =  ANY(di.ia_path_root)
+        or de.i_district_id = #{districtID}
+        order by de.i_id
+    </select>
+
+    <select id="allDepartments" resultMap="department">
+        select de.i_id as did, ch_department_name, de.i_supervisor_id as i_supervisor_id, de.i_level as i_level,
+               i_district_id, di.ch_name as district_name
+        from b_departments as de
+            left join b_districts as di on de.i_district_id = di.i_id
+        order by de.i_id
+    </select>
+
+    <select id="allDepartmentsForTree" resultMap="departmentForTree">
+        select i_id, i_supervisor_id as pId, ch_department_name as label, i_id as value from b_departments
+    </select>
+
+    <select id="getSubDepartmentsForTree" resultMap="departmentForTree" >
+        select i_id, i_supervisor_id as pId, ch_department_name as label, i_id as value from b_departments
+        where i_supervisor_id = #{ID}
+    </select>
+
+    <select id="getDepartmentByID" resultMap="department">
+        select i_id as did, ch_department_name, i_supervisor_id, i_level, i_district_id
+        from b_departments
+        where i_id = #{id}
+    </select>
+
+    <select id="getDepartmentsByLevel" resultMap="department">
+        select i_id as did, ch_department_name, i_supervisor_id, i_level, i_district_id
+        from b_departments
+        where i_level = #{level}
+    </select>
+
+    <select id="getSubDepartments" resultMap="department">
+        select i_id as did, ch_department_name, i_supervisor_id, i_level, i_district_id
+        from b_departments
+        where i_supervisor_id = #{rootID}
+    </select>
+
+    <insert id="addDepartment" useGeneratedKeys="true" parameterType="com.linkinghack.criminalquery.model.Department">
+        insert into b_departments (ch_department_name, i_supervisor_id, i_level, i_district_id)
+        values (#{departmentName}, #{supervisorID}, #{level}, #{districtID})
+    </insert>
+
+    <delete id="deleteDepartment" parameterType="Integer" >
+        delete from b_departments where i_id = #{ID}
+    </delete>
+
+</mapper>

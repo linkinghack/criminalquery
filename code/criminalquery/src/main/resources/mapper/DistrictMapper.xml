@@ -13,4 +13,12 @@
         <result column="ch_city_name" property="city"/>
         <result column="ch_county_name" property="county"/>
     </resultMap>
+
+    <select id="selectDistrictsByLevel" parameterType="Integer" resultMap="oneDistrict">
+        select * from b_districts where i_level = #{level}
+    </select>
+
+    <select id="findSubDistricts" parameterType="Integer" resultMap="oneDistrict">
+        select * from b_districts where i_supervisor_id = #{supervisorID}
+    </select>
 </mapper>

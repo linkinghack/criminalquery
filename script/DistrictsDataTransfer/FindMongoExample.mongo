@@ -1,1 +1,4 @@
-db.districts.aggregate([{$match:{id:110000}}, {$graphLookup: {from: "districts", startWith: "$id", connectFromField:"id", connectToField: "supervisorid", as: "children" }} ])
+db.districts.aggregate([{$match:{id:110000}}, {$graphLookup: {from: "districts", startWith: "$id", connectFromField:"id", connectToField: "supervisorid", as: "children" }}, {$rename: {'id':'value', 'name':'label'}} ])
+
+// 更新属性名 id->value,  name->label 已适用于Vue组件构造选择框
+db.districts.find().forEach(function(e){ e.value=""+e.id; e.label=e.name; db.districts.save(e) })

@@ -17,7 +17,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFp8MRqdjhNNzc="
 					},
-					"name": "ERDDiagram1",
+					"name": "系统ER",
 					"ownedViews": [
 						{
 							"_type": "ERDEntityView",

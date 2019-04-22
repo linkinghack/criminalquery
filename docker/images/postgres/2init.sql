@@ -1,7 +1,7 @@
 CREATE TABLE public.b_users (
     i_id SERIAL NOT NULL,
     ch_user_id varchar(64) NOT NULL UNIQUE,
-    ch_passwd_sha256 varchar(128) NOT NULL,
+    ch_password_sha256 varchar(128) NOT NULL,
     ch_email varchar(128) NOT NULL,
     ch_realname varchar NOT NULL,
     i_role integer NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE public.b_users (
 );
 COMMENT ON COLUMN public.b_users.ch_user_id
     IS '用于用户登录的用户名';
-COMMENT ON COLUMN public.b_users.ch_passwd_sha256
+COMMENT ON COLUMN public.b_users.ch_password_sha256
     IS 'SHA256加密的密码';
 COMMENT ON COLUMN public.b_users.ch_email
     IS '用户邮箱';

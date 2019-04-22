@@ -53,7 +53,7 @@ func InitPostgresDB(xlFile *xlsx.File) (districts []interface{}) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	stmt, err := txn.Prepare(pq.CopyIn("b_districts", "i_id", "i_supervisor_id", "ch_path_root", "i_level", "ch_name", "ch_province_name", "ch_city_name", "ch_county_name"))
+	stmt, err := txn.Prepare(pq.CopyIn("b_districts", "i_id", "i_supervisor_id", "ia_path_root", "i_level", "ch_name", "ch_province_name", "ch_city_name", "ch_county_name"))
 	if err != nil {
 		log.Fatal(err)
 	}

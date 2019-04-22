@@ -1,8 +1,9 @@
 package com.linkinghack.criminalquery.dao.mapper;
-
 import com.linkinghack.criminalquery.model.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Mapper
 @Repository
@@ -17,4 +18,6 @@ public interface UserMapper {
     User selectUserByUserID(String userID);
 
     Integer updatePassword(String userID, String newPassword);
+
+    List<User> users();
 }

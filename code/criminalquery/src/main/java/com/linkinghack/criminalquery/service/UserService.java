@@ -27,7 +27,7 @@ public class UserService {
         try {
             int lineAffected = userMapper.createUser(user);
             if (lineAffected == 1)
-                return UniversalResponse.Ok(user);
+                return UniversalResponse.Ok("注册成功,在审批通过前您无法登录。");
             else{
                 throw new RegisterFailedException("插入新用户行数为0");
             }
@@ -54,7 +54,7 @@ public class UserService {
         if (request.getRemember()){
             session.setMaxInactiveInterval(3600); // 登录状态最多维持1小时
         }
-
+        System.out.println(session.getAttribute("user"));
         user.setPassword(null);
         return UniversalResponse.Ok(user);
     }
@@ -83,6 +83,15 @@ public class UserService {
             String errID = UUID.randomUUID().toString();
             logger.error("更改密码失败, userID={}, errID= {} ", userID, errID);
             return UniversalResponse.ServerFail("未知错误,errID = " + errID);
+        }
+    }
+
+    public UniversalResponse getAllUsers(HttpSession session) {
+        User currentUser = (User) session.getAttribute("user");
+        if (currentUser != null && currentUser.getRole() == 1) {
+            return UniversalResponse.Ok(userMapper.users());
+        } else {
+            return UniversalResponse.UserFail("没有权限");
         }
     }
 

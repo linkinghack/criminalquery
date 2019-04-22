@@ -1,17 +1,18 @@
 package com.linkinghack.criminalquery.controller;
 import com.linkinghack.criminalquery.TransferModel.LoginRequest;
+import com.linkinghack.criminalquery.TransferModel.RegisterRequest;
 import com.linkinghack.criminalquery.TransferModel.UniversalResponse;
+import com.linkinghack.criminalquery.model.User;
 import com.linkinghack.criminalquery.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private UserService userService;
@@ -22,14 +23,39 @@ public class UserController {
     }
 
     /**
-     *  登录鉴权接口
+     *  登录鉴权接口 /auth
      * @param loginRequest {"userID": "id", "password": "password", "remember": true}
      * @param session session
      * @return
+     * {
+     *     "status": 200,
+     *     "data": {
+     *         "id": 1,
+     *         "userID": "admin",
+     *         "password": null,
+     *         "email": "linkinghack@outlook.com",
+     *         "realName": "刘磊",
+     *         "role": 1,
+     *         "departmentID": 1,
+     *         "activated": true,
+     *         "phone": "18235101905",
+     *         "department": {
+     *             "id": 1,
+     *             "departmentName": "公安部",
+     *             "supervisorID": 0,
+     *             "level": 1,
+     *             "districtID": 100000,
+     *             "value": null,
+     *             "label": null
+     *         }
+     *     },
+     *     "msg": "成功"
+     * }
      */
     @PostMapping("/auth")
     public UniversalResponse login(@RequestBody LoginRequest loginRequest, HttpSession session) {
-        logger.info("@request{/auth} userID: {}", loginRequest.getUserID());
+        String fn = "<POST>[/user/auth]";
+        logger.info("@request{/user/auth} userID: {}", loginRequest.getUserID());
 
         if (loginRequest.getUserID() == null || loginRequest.getUserID().length() > 32) {
             return UniversalResponse.UserFail("用户名长度不合法");
@@ -39,7 +65,38 @@ public class UserController {
         }
         UniversalResponse universalResponse = userService.login(loginRequest, session );
 
-        logger.info("@response{/auth} {}", universalResponse);
+        logger.info("@response{/user/auth} {}", universalResponse);
         return universalResponse;
+    }
+
+    @PostMapping("/logout")
+    public UniversalResponse logout(HttpSession session) {
+        session.invalidate();
+        return UniversalResponse.Ok("已登出");
+    }
+
+    @PostMapping("/register")
+    public UniversalResponse register(@RequestBody RegisterRequest registerRequest) {
+        String fn = "<POST>[/user/register]";
+        logger.info("@request {}", fn);
+        if (!registerRequest.getPassword().equals(registerRequest.getConfirm()))
+            return UniversalResponse.UserFail("两密码不匹配");
+        User user = new User();
+        user.setUserID( registerRequest.getUserID());
+        user.setPassword(registerRequest.getPassword());
+        user.setDepartmentID(registerRequest.getDepartmentID());
+        user.setEmail(registerRequest.getEmail());
+        user.setPhone(registerRequest.getPhone());
+        user.setRealName(registerRequest.getRealName());
+        user.setActivated(false); // 默认不激活
+        user.setRole(0); //默认非管理员
+        UniversalResponse response = userService.register(user);
+        logger.info("@response {} {}", fn, response);
+        return response;
+    }
+
+    @GetMapping("/all")
+    public UniversalResponse allUsers(HttpSession session) {
+        return userService.getAllUsers(session);
     }
 }

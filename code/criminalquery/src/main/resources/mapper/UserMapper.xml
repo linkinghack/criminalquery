@@ -13,14 +13,7 @@
         <result column="i_department_id" property="departmentID"/>
         <result column="b_activated" property="activated"/>
         <result column="ch_phone" property="phone"/>
-        <association property="department" resultMap="department"/>
-    </resultMap>
-    <resultMap id="department" type="com.linkinghack.criminalquery.model.Department">
-        <id column="did" property="id" javaType="Integer"/>
-        <result column="ch_department_name" property="departmentName"/>
-        <result column="i_supervisor_id" property="supervisorID"/>
-        <result column="i_level" property="level"/>
-        <result column="i_district_id" property="districtID"/>
+        <association property="department" resultMap="com.linkinghack.criminalquery.dao.mapper.DepartmentMapper.department"/>
     </resultMap>
     
     <select id="selectUserByID" resultMap="user" parameterType="java.lang.Integer">
@@ -35,6 +28,12 @@
                department.i_id as did, ch_department_name, i_supervisor_id, i_level, i_district_id
         from b_users as users left join b_departments as department on users.i_department_id = department.i_id
         where ch_user_id = #{userID}
+    </select>
+
+    <select id="users" resultMap="user">
+        select  users.i_id as uid, ch_user_id, ch_password_sha256, ch_email, ch_realname, i_role, i_department_id, b_activated, ch_phone,
+                department.i_id as did, ch_department_name, i_supervisor_id, i_level, i_district_id
+        from b_users as users left join b_departments as department on users.i_department_id = department.i_id
     </select>
 
     <insert id="createUser" parameterType="com.linkinghack.criminalquery.model.User" useGeneratedKeys="true">

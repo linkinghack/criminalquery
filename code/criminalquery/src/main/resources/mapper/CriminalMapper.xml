@@ -3,47 +3,97 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.linkinghack.criminalquery.dao.mapper.CriminalMapper">
-    <insert id="createWantedOrder" parameterType="com.linkinghack.criminalquery.model.WantedOrder" keyColumn="i_id" keyProperty="id" useGeneratedKeys="true">
+    <insert id="createWantedOrder" parameterType="com.linkinghack.criminalquery.model.WantedOrder" keyColumn="i_id"
+            keyProperty="id" useGeneratedKeys="true">
         insert into b_wanted_orders(i_criminal_id, ch_arrest_reason, i_arrest_level, i_arrest_status, i_district_id)
-        values (#{criminalID}, #{arrestReason},#{arrestLevel},#{arrestStatus},#{districtID})
+        values (#{criminalID}, #{arrestReason}, #{arrestLevel}, #{arrestStatus}, #{districtID})
     </insert>
 
     <insert id="createCriminal" useGeneratedKeys="true" parameterType="com.linkinghack.criminalquery.model.Criminal"
             keyColumn="i_id" keyProperty="id">
-        insert into b_criminals(ch_name, i_sex, i_height_cm, d_birthday, ch_born_place, ch_idcard_id, ch_other_features, ch_portrait_fileid, ch_edu_background, ch_job, ch_workfor, ch_phone, ch_address, i_created_by, i_updated_by)
-        values (#{name}, #{sex}, #{height},#{birthday}, #{bornPlace}, #{idCardID}, #{otherFeatures}, #{portraitFileID}, #{eduBackgound}, #{job}, #{workFor}, #{phone}, #{address}, #{createdBy}, #{updatedBy} )
+        insert into b_criminals(ch_name, i_sex, i_height_cm, d_birthday, ch_born_place, ch_idcard_id, ch_other_features,
+                                ch_portrait_fileid, ch_edu_background, ch_job, ch_workfor, ch_phone, ch_address,
+                                i_created_by, i_updated_by)
+        values (#{name}, #{sex}, #{height}, #{birthday}, #{bornPlace}, #{idCardID}, #{otherFeatures}, #{portraitFileID},
+                #{eduBackgound}, #{job}, #{workFor}, #{phone}, #{address}, #{createdBy}, #{updatedBy})
     </insert>
-    <update id="updateCriminal" keyColumn="i_id" keyProperty="id" parameterType="com.linkinghack.criminalquery.model.Criminal">
-        update b_criminals set ch_name = #{name}, i_sex = #{sex}, i_height_cm = #{height}, d_birthday = #{birthday}, ch_born_place=#{bornPlace}, ch_portrait_fileid=#{portrainFileID},
-                               ch_edu_background = #{eduBackground}, ch_job = #{job}, ch_workfor=#{workFor}, ch_phone=#{phone}, ch_address=#{address}, i_created_by=#{createdBy}, i_updated_by=#{updatedBy},
-                               ts_updated_at = now()
+    <update id="updateCriminal" keyColumn="i_id" keyProperty="id"
+            parameterType="com.linkinghack.criminalquery.model.Criminal">
+        update b_criminals
+        set ch_name            = #{name},
+            i_sex              = #{sex},
+            i_height_cm        = #{height},
+            d_birthday         = #{birthday},
+            ch_born_place      = #{bornPlace},
+            ch_portrait_fileid = #{portrainFileID},
+            ch_edu_background  = #{eduBackground},
+            ch_job             = #{job},
+            ch_workfor         = #{workFor},
+            ch_phone           = #{phone},
+            ch_address         = #{address},
+            i_created_by       = #{createdBy},
+            i_updated_by       = #{updatedBy},
+            ts_updated_at      = now()
         where i_id = #{id}
     </update>
     <update id="updateCriminalDate" parameterType="Integer">
-        update b_criminals set ts_updated_at = now() where i_id = #{id}
+        update b_criminals
+        set ts_updated_at = now()
+        where i_id = #{id}
     </update>
 
-    <insert id="addCriminalContact" parameterType="com.linkinghack.criminalquery.model.CriminalContact" keyColumn="i_id" keyProperty="id" useGeneratedKeys="true">
+    <insert id="addCriminalContact" parameterType="com.linkinghack.criminalquery.model.CriminalContact" keyColumn="i_id"
+            keyProperty="id" useGeneratedKeys="true">
         insert into b_criminal_contacts(i_criminal_id, ch_name, i_sex, d_birthday, ch_relation, ch_phone, ch_address)
         values (#{criminalID}, #{name}, #{sex}, #{birthday}, #{relation}, #{phone}, #{address})
     </insert>
 
-    <insert id="addClue" parameterType="com.linkinghack.criminalquery.model.Clue" keyColumn="i_id" keyProperty="id" useGeneratedKeys="true">
-        insert into b_clue(i_criminal_id, ch_fileids, ch_description) VALUES (#{criminalID}, #{fileIDs}, #{description})
+    <insert id="addClue" parameterType="com.linkinghack.criminalquery.model.Clue" keyColumn="i_id" keyProperty="id"
+            useGeneratedKeys="true">
+        insert into b_clue(i_criminal_id, ch_fileids, ch_description)
+        VALUES (#{criminalID}, #{fileIDs}, #{description})
     </insert>
 
+    <select id="getCriminalInfo" resultMap="criminalInfo" parameterType="Integer">
+        select *
+        from b_criminals
+        where i_id = #{id}
+    </select>
+
+    <select id="searchCriminals" resultMap="criminalInfo"
+            parameterType="com.linkinghack.criminalquery.TransferModel.SearchCriminalRequest">
+        select bcri.i_id as i_id, ch_name, i_sex, i_height_cm, d_birthday,( CURRENT_DATE - d_birthday)/365 as age ,
+        ch_born_place, ch_idcard_id, ch_other_features, ch_portrait_fileid, ch_edu_background, ch_job, ch_workfor,
+        ch_phone, ch_address, ts_created_at, ts_updated_at, i_created_by, i_updated_by
+        from b_criminals as bcri
+        left join b_wanted_orders as bwant on bcri.i_id = bwant.i_criminal_id
+        <where>
+            <if test="name != null">ch_name like #{name}</if>
+            <if test="sex != null">AND i_sex = #{sex}</if>
+            <if test="heightStart != null">AND i_height_cm &gt;= #{heightStart}</if>
+            <if test="heightEnd != null">AND i_height_cm &lt;= #{heightEnd}</if>
+            <if test="ageStart != null">AND ( CURRENT_DATE - d_birthday)/365 &gt;= #{ageStart}</if>
+            <if test="ageEnd != null">AND ( CURRENT_DATE - d_birthday)/365 &lt;= #{ageEnd}</if>
+            <if test="job != null">AND ch_job like #{job}</if>
+            <if test="workFor != null">AND ch_workfor like #{workFor}</if>
+            <if test="address != null">AND ch_address like #{address}</if>
+            <if test="otherFeatures != null">AND ch_other_eatures like #{otherFeatures}</if>
+        </where>
+    </select>
+
     <resultMap id="criminalInfo" type="com.linkinghack.criminalquery.model.Criminal">
-        <id column="i_id" property="id"></id>
-        <result column="ch_name" property="name"></result>
-        <result column="i_sex" property="sex"></result>
-        <result column="d_birthday_date" property="birthday"></result>
-        <result column="ch_born_place" property="bornPlace"></result>
-        <result column="ch_idcard_id" property="idCardID"></result>
-        <result column="ch_other_features" property="otherFeatures"></result>
-        <result column="ch_portrait_fileid" property="portraitFileID"></result>
-        <result column="ch_edu_background" property="eduBackground"></result>
-        <result column="ch_job" property="job"></result>
-        <result column="ch_workfor" property="workFor"></result>
+        <id column="i_id" property="id"/>
+        <result column="ch_name" property="name"/>
+        <result column="i_sex" property="sex"/>
+        <result column="d_birthday_date" property="birthday"/>
+        <result column="age" property="age"/>
+        <result column="ch_born_place" property="bornPlace"/>
+        <result column="ch_idcard_id" property="idCardID"/>
+        <result column="ch_other_features" property="otherFeatures"/>
+        <result column="ch_portrait_fileid" property="portraitFileID"/>
+        <result column="ch_edu_background" property="eduBackground"/>
+        <result column="ch_job" property="job"/>
+        <result column="ch_workfor" property="workFor"/>
         <result column="ch_phone" property="phone"/>
         <result column="ch_address" property="address"/>
         <result column="ts_created_at" property="createdAt"/>
@@ -52,7 +102,7 @@
         <result column="i_updated_by" property="updatedBy"/>
     </resultMap>
 
-    <resultMap id="criminalContactInfo" type="com.linkinghack.criminalquery.model.CriminalContact" >
+    <resultMap id="criminalContactInfo" type="com.linkinghack.criminalquery.model.CriminalContact">
         <id column="i_id" property="id"/>
         <result column="i_criminal_id" property="criminalID"/>
         <result column="ch_name" property="name"/>

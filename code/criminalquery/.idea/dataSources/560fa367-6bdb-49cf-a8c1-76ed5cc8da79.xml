@@ -9,16 +9,16 @@
       <Comment>default administrative connection database</Comment>
       <StateNumber>567</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1041</IntrospectionStateNumber>
+      <IntrospectionStateNumber>658</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
-      <Relations>sequence|table|16727|16729|1
-sequence|table|16739|16741|1
-sequence|table|16658|16660|1
-sequence|table|16669|16671|1
-sequence|table|16680|16682|1
-sequence|table|16695|16697|1
-sequence|table|16706|16708|1
+      <Relations>sequence|table|16384|16386|1
+sequence|table|16397|16399|1
+sequence|table|16408|16410|1
+sequence|table|16423|16425|1
+sequence|table|16434|16436|1
+sequence|table|16455|16457|1
+sequence|table|16467|16469|1
 </Relations>
     </database>
     <role id="3" parent="1" name="pg_execute_server_program">
@@ -104,7 +104,7 @@ sequence|table|16706|16708|1
       <Comment>standard public schema</Comment>
       <StateNumber>360</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1042</IntrospectionStateNumber>
+      <IntrospectionStateNumber>659</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -165,112 +165,112 @@ sequence|table|16706|16708|1
       <SchemaId>11</SchemaId>
     </extension>
     <sequence id="25" parent="17" name="b_clue_i_id_seq">
-      <ObjectId>16727</ObjectId>
-      <StateNumber>940</StateNumber>
+      <ObjectId>16455</ObjectId>
+      <StateNumber>629</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
     <sequence id="26" parent="17" name="b_criminal_contacts_i_id_seq">
-      <ObjectId>16695</ObjectId>
-      <StateNumber>914</StateNumber>
+      <ObjectId>16423</ObjectId>
+      <StateNumber>603</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
     <sequence id="27" parent="17" name="b_criminals_i_id_seq">
-      <ObjectId>16680</ObjectId>
-      <StateNumber>896</StateNumber>
+      <ObjectId>16408</ObjectId>
+      <StateNumber>585</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
     <sequence id="28" parent="17" name="b_departments_i_id_seq">
-      <ObjectId>16669</ObjectId>
-      <StateNumber>889</StateNumber>
+      <ObjectId>16397</ObjectId>
+      <StateNumber>578</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
     <sequence id="29" parent="17" name="b_publish_applications_i_id_seq">
-      <ObjectId>16739</ObjectId>
-      <StateNumber>946</StateNumber>
+      <ObjectId>16467</ObjectId>
+      <StateNumber>635</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
     <sequence id="30" parent="17" name="b_users_i_id_seq">
-      <ObjectId>16658</ObjectId>
-      <StateNumber>880</StateNumber>
+      <ObjectId>16384</ObjectId>
+      <StateNumber>569</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
     <sequence id="31" parent="17" name="b_wanted_orders_i_id_seq">
-      <ObjectId>16706</ObjectId>
-      <StateNumber>924</StateNumber>
+      <ObjectId>16434</ObjectId>
+      <StateNumber>613</StateNumber>
       <Owner>postgres</Owner>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
     <table id="32" parent="17" name="b_clue">
-      <ObjectId>16729</ObjectId>
+      <ObjectId>16457</ObjectId>
       <Comment>逃犯线索表</Comment>
       <Owner>postgres</Owner>
-      <StateNumber>1016</StateNumber>
+      <StateNumber>629</StateNumber>
     </table>
     <table id="33" parent="17" name="b_criminal_contacts">
-      <ObjectId>16697</ObjectId>
+      <ObjectId>16425</ObjectId>
       <Comment>逃犯相关联系人</Comment>
       <Owner>postgres</Owner>
-      <StateNumber>914</StateNumber>
+      <StateNumber>603</StateNumber>
     </table>
     <table id="34" parent="17" name="b_criminals">
-      <ObjectId>16682</ObjectId>
+      <ObjectId>16410</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>1008</StateNumber>
+      <StateNumber>585</StateNumber>
     </table>
     <table id="35" parent="17" name="b_departments">
-      <ObjectId>16671</ObjectId>
+      <ObjectId>16399</ObjectId>
       <Comment>部门表</Comment>
       <Owner>postgres</Owner>
-      <StateNumber>889</StateNumber>
+      <StateNumber>578</StateNumber>
     </table>
     <table id="36" parent="17" name="b_districts">
-      <ObjectId>16719</ObjectId>
+      <ObjectId>16447</ObjectId>
       <Comment>行政区划</Comment>
       <Owner>postgres</Owner>
-      <StateNumber>972</StateNumber>
+      <StateNumber>619</StateNumber>
     </table>
     <table id="37" parent="17" name="b_publish_applications">
-      <ObjectId>16741</ObjectId>
+      <ObjectId>16469</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>946</StateNumber>
+      <StateNumber>635</StateNumber>
     </table>
     <table id="38" parent="17" name="b_users">
-      <ObjectId>16660</ObjectId>
+      <ObjectId>16386</ObjectId>
       <Owner>postgres</Owner>
-      <StateNumber>880</StateNumber>
+      <StateNumber>569</StateNumber>
     </table>
     <table id="39" parent="17" name="b_wanted_orders">
-      <ObjectId>16708</ObjectId>
+      <ObjectId>16436</ObjectId>
       <Comment>通缉令表</Comment>
       <Owner>postgres</Owner>
-      <StateNumber>1035</StateNumber>
+      <StateNumber>613</StateNumber>
     </table>
     <column id="40" parent="32" name="i_id">
       <Position>1</Position>
       <Comment>表主键,业务无关</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>940</StateNumber>
+      <StateNumber>629</StateNumber>
       <DefaultExpression>nextval(&apos;b_clue_i_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -278,7 +278,7 @@ sequence|table|16706|16708|1
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>940</StateNumber>
+      <StateNumber>629</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="42" parent="32" name="ch_fileids">
@@ -286,7 +286,7 @@ sequence|table|16706|16708|1
       <Comment>逗号分隔的资源文件id</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>940</StateNumber>
+      <StateNumber>629</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="43" parent="32" name="ch_description">
@@ -294,7 +294,7 @@ sequence|table|16706|16708|1
       <Comment>线索描述</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>940</StateNumber>
+      <StateNumber>629</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="44" parent="32" name="ts_created_at">
@@ -302,20 +302,20 @@ sequence|table|16706|16708|1
       <Comment>线索上传时间</Comment>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1016</StateNumber>
+      <StateNumber>629</StateNumber>
       <DefaultExpression>now()</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
     <index id="45" parent="32" name="b_clue_pkey">
-      <ObjectId>16737</ObjectId>
-      <StateNumber>1016</StateNumber>
+      <ObjectId>16465</ObjectId>
+      <StateNumber>629</StateNumber>
       <ColNames>i_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="46" parent="32" name="b_clue_pkey">
-      <ObjectId>16738</ObjectId>
-      <StateNumber>940</StateNumber>
+      <ObjectId>16466</ObjectId>
+      <StateNumber>629</StateNumber>
       <ColNames>i_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>b_clue_pkey</UnderlyingIndexName>
@@ -325,7 +325,7 @@ sequence|table|16706|16708|1
       <Comment>表主键业务无关</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>914</StateNumber>
+      <StateNumber>603</StateNumber>
       <DefaultExpression>nextval(&apos;b_criminal_contacts_i_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -334,7 +334,7 @@ sequence|table|16706|16708|1
       <Comment>对应逃犯id</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>914</StateNumber>
+      <StateNumber>603</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="49" parent="33" name="ch_name">
@@ -342,7 +342,7 @@ sequence|table|16706|16708|1
       <Comment>联系人姓名</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>914</StateNumber>
+      <StateNumber>603</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="50" parent="33" name="i_sex">
@@ -350,14 +350,14 @@ sequence|table|16706|16708|1
       <Comment>联系人性别</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>914</StateNumber>
+      <StateNumber>603</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="51" parent="33" name="d_birthday">
       <Position>5</Position>
       <Comment>联系人生日</Comment>
       <DataType>date|0s</DataType>
-      <StateNumber>914</StateNumber>
+      <StateNumber>603</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <column id="52" parent="33" name="ch_relation">
@@ -365,7 +365,7 @@ sequence|table|16706|16708|1
       <Comment>联系人与逃犯关系</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1026</StateNumber>
+      <StateNumber>603</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="53" parent="33" name="ch_phone">
@@ -373,26 +373,26 @@ sequence|table|16706|16708|1
       <Comment>联系人电话</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>914</StateNumber>
+      <StateNumber>603</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="54" parent="33" name="ch_address">
       <Position>8</Position>
       <Comment>联系人地址</Comment>
       <DataType>varchar|0s</DataType>
-      <StateNumber>914</StateNumber>
+      <StateNumber>603</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="55" parent="33" name="b_criminal_contacts_pkey">
-      <ObjectId>16704</ObjectId>
-      <StateNumber>914</StateNumber>
+      <ObjectId>16432</ObjectId>
+      <StateNumber>603</StateNumber>
       <ColNames>i_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="56" parent="33" name="b_criminal_contacts_pkey">
-      <ObjectId>16705</ObjectId>
-      <StateNumber>914</StateNumber>
+      <ObjectId>16433</ObjectId>
+      <StateNumber>603</StateNumber>
       <ColNames>i_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>b_criminal_contacts_pkey</UnderlyingIndexName>
@@ -401,7 +401,7 @@ sequence|table|16706|16708|1
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <DefaultExpression>nextval(&apos;b_criminals_i_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -410,7 +410,7 @@ sequence|table|16706|16708|1
       <Comment>逃犯姓名</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="59" parent="34" name="i_sex">
@@ -418,84 +418,84 @@ sequence|table|16706|16708|1
       <Comment>0-未知,1-男,2-女</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="60" parent="34" name="i_height_cm">
       <Position>4</Position>
       <Comment>逃犯身高,单位厘米</Comment>
       <DataType>integer|0s</DataType>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="61" parent="34" name="d_birthday">
       <Position>5</Position>
       <Comment>逃犯生日</Comment>
       <DataType>date|0s</DataType>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>1082</TypeId>
     </column>
     <column id="62" parent="34" name="ch_born_place">
       <Position>6</Position>
       <Comment>籍贯</Comment>
       <DataType>varchar|0s</DataType>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="63" parent="34" name="ch_idcard_id">
       <Position>7</Position>
       <Comment>身份证号</Comment>
       <DataType>varchar|0s</DataType>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="64" parent="34" name="ch_other_features">
       <Position>8</Position>
       <Comment>自然语言描述的逃犯特征</Comment>
       <DataType>text|0s</DataType>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>25</TypeId>
     </column>
     <column id="65" parent="34" name="ch_portrait_fileid">
       <Position>9</Position>
       <Comment>逃犯主识别图像的文件id</Comment>
       <DataType>varchar|0s</DataType>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="66" parent="34" name="ch_edu_background">
       <Position>10</Position>
       <Comment>教育背景</Comment>
       <DataType>varchar|0s</DataType>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="67" parent="34" name="ch_job">
       <Position>11</Position>
       <Comment>工作种类</Comment>
       <DataType>varchar|0s</DataType>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="68" parent="34" name="ch_workfor">
       <Position>12</Position>
       <Comment>工作单位</Comment>
       <DataType>varchar|0s</DataType>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="69" parent="34" name="ch_phone">
       <Position>13</Position>
       <Comment>逃犯曾用电话</Comment>
       <DataType>varchar|0s</DataType>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="70" parent="34" name="ch_address">
       <Position>14</Position>
       <Comment>住所地址</Comment>
       <DataType>varchar|0s</DataType>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="71" parent="34" name="ts_created_at">
@@ -503,7 +503,7 @@ sequence|table|16706|16708|1
       <Comment>逃犯信息入库时间</Comment>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1007</StateNumber>
+      <StateNumber>585</StateNumber>
       <DefaultExpression>now()</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
@@ -512,7 +512,7 @@ sequence|table|16706|16708|1
       <Comment>逃犯个人信息更新日期时间</Comment>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1008</StateNumber>
+      <StateNumber>585</StateNumber>
       <DefaultExpression>now()</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
@@ -521,7 +521,7 @@ sequence|table|16706|16708|1
       <Comment>逃犯信息创建人id</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="74" parent="34" name="i_updated_by">
@@ -529,32 +529,32 @@ sequence|table|16706|16708|1
       <Comment>最后一个更新逃犯信息人id</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>896</StateNumber>
+      <StateNumber>585</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="75" parent="34" name="b_criminals_pkey">
-      <ObjectId>16691</ObjectId>
-      <StateNumber>1008</StateNumber>
+      <ObjectId>16419</ObjectId>
+      <StateNumber>585</StateNumber>
       <ColNames>i_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <index id="76" parent="34" name="b_criminals_ch_idcard_id_key">
-      <ObjectId>16693</ObjectId>
-      <StateNumber>1008</StateNumber>
+      <ObjectId>16421</ObjectId>
+      <StateNumber>585</StateNumber>
       <ColNames>ch_idcard_id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="77" parent="34" name="b_criminals_pkey">
-      <ObjectId>16692</ObjectId>
-      <StateNumber>896</StateNumber>
+      <ObjectId>16420</ObjectId>
+      <StateNumber>585</StateNumber>
       <ColNames>i_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>b_criminals_pkey</UnderlyingIndexName>
     </key>
     <key id="78" parent="34" name="b_criminals_ch_idcard_id_key">
-      <ObjectId>16694</ObjectId>
-      <StateNumber>896</StateNumber>
+      <ObjectId>16422</ObjectId>
+      <StateNumber>585</StateNumber>
       <ColNames>ch_idcard_id</ColNames>
       <UnderlyingIndexName>b_criminals_ch_idcard_id_key</UnderlyingIndexName>
     </key>
@@ -563,7 +563,7 @@ sequence|table|16706|16708|1
       <Comment>部门id</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>889</StateNumber>
+      <StateNumber>578</StateNumber>
       <DefaultExpression>nextval(&apos;b_departments_i_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -572,23 +572,21 @@ sequence|table|16706|16708|1
       <Comment>部门名称</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>889</StateNumber>
+      <StateNumber>578</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="81" parent="35" name="i_supervisor_id">
       <Position>3</Position>
       <Comment>上级部门id</Comment>
       <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>889</StateNumber>
+      <StateNumber>656</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="82" parent="35" name="i_level">
       <Position>4</Position>
       <Comment>部门级别:1-国家级,2-省部级,3-市级别,4-县/区级</Comment>
       <DataType>integer|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>889</StateNumber>
+      <StateNumber>657</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="83" parent="35" name="i_district_id">
@@ -596,19 +594,19 @@ sequence|table|16706|16708|1
       <Comment>辖区id</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>889</StateNumber>
+      <StateNumber>578</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="84" parent="35" name="b_departments_pkey">
-      <ObjectId>16678</ObjectId>
-      <StateNumber>889</StateNumber>
+      <ObjectId>16406</ObjectId>
+      <StateNumber>578</StateNumber>
       <ColNames>i_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="85" parent="35" name="b_departments_pkey">
-      <ObjectId>16679</ObjectId>
-      <StateNumber>889</StateNumber>
+      <ObjectId>16407</ObjectId>
+      <StateNumber>578</StateNumber>
       <ColNames>i_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>b_departments_pkey</UnderlyingIndexName>
@@ -618,7 +616,7 @@ sequence|table|16706|16708|1
       <Comment>区划id</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>930</StateNumber>
+      <StateNumber>619</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="87" parent="36" name="i_supervisor_id">
@@ -626,7 +624,7 @@ sequence|table|16706|16708|1
       <Comment>父级区划id</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>930</StateNumber>
+      <StateNumber>619</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="88" parent="36" name="ia_path_root">
@@ -634,7 +632,7 @@ sequence|table|16706|16708|1
       <Comment>回溯id路径,逗号分隔,从省id开始</Comment>
       <DataType>integer[]|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>984</StateNumber>
+      <StateNumber>619</StateNumber>
       <TypeId>1007</TypeId>
     </column>
     <column id="89" parent="36" name="i_level">
@@ -642,7 +640,7 @@ sequence|table|16706|16708|1
       <Comment>区划等级:0-国家,1-省/直辖市,2-市,3-县/区</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>930</StateNumber>
+      <StateNumber>619</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="90" parent="36" name="ch_name">
@@ -650,7 +648,7 @@ sequence|table|16706|16708|1
       <Comment>区划名称</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>930</StateNumber>
+      <StateNumber>619</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="91" parent="36" name="ch_province_name">
@@ -658,7 +656,7 @@ sequence|table|16706|16708|1
       <Comment>所属省或直辖市名称</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>930</StateNumber>
+      <StateNumber>619</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="92" parent="36" name="ch_city_name">
@@ -666,7 +664,7 @@ sequence|table|16706|16708|1
       <Comment>所属市名称,省级区划为空</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>930</StateNumber>
+      <StateNumber>619</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="93" parent="36" name="ch_county_name">
@@ -674,19 +672,19 @@ sequence|table|16706|16708|1
       <Comment>所属县区名称,省和市级区划此项为空</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>930</StateNumber>
+      <StateNumber>619</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="94" parent="36" name="b_districts_pkey">
-      <ObjectId>16725</ObjectId>
-      <StateNumber>972</StateNumber>
+      <ObjectId>16453</ObjectId>
+      <StateNumber>619</StateNumber>
       <ColNames>i_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="95" parent="36" name="b_districts_pkey">
-      <ObjectId>16726</ObjectId>
-      <StateNumber>930</StateNumber>
+      <ObjectId>16454</ObjectId>
+      <StateNumber>619</StateNumber>
       <ColNames>i_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>b_districts_pkey</UnderlyingIndexName>
@@ -696,7 +694,7 @@ sequence|table|16706|16708|1
       <Comment>表主键业务无关</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>946</StateNumber>
+      <StateNumber>635</StateNumber>
       <DefaultExpression>nextval(&apos;b_publish_applications_i_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -704,7 +702,7 @@ sequence|table|16706|16708|1
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>946</StateNumber>
+      <StateNumber>635</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="98" parent="37" name="i_applicant_id">
@@ -712,7 +710,7 @@ sequence|table|16706|16708|1
       <Comment>申请者id</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>946</StateNumber>
+      <StateNumber>635</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="99" parent="37" name="i_status">
@@ -720,7 +718,7 @@ sequence|table|16706|16708|1
       <Comment>审批状态:0-待审批,1-审批通过,2-拒绝发布</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>946</StateNumber>
+      <StateNumber>635</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="100" parent="37" name="i_target_district">
@@ -728,26 +726,26 @@ sequence|table|16706|16708|1
       <Comment>目标通缉区域id</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>946</StateNumber>
+      <StateNumber>635</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="101" parent="37" name="i_apporver_id">
       <Position>6</Position>
       <Comment>审批人id</Comment>
       <DataType>integer|0s</DataType>
-      <StateNumber>946</StateNumber>
+      <StateNumber>635</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="102" parent="37" name="b_publish_applications_pkey">
-      <ObjectId>16745</ObjectId>
-      <StateNumber>946</StateNumber>
+      <ObjectId>16473</ObjectId>
+      <StateNumber>635</StateNumber>
       <ColNames>i_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
     <key id="103" parent="37" name="b_publish_applications_pkey">
-      <ObjectId>16746</ObjectId>
-      <StateNumber>946</StateNumber>
+      <ObjectId>16474</ObjectId>
+      <StateNumber>635</StateNumber>
       <ColNames>i_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>b_publish_applications_pkey</UnderlyingIndexName>
@@ -756,7 +754,7 @@ sequence|table|16706|16708|1
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>880</StateNumber>
+      <StateNumber>569</StateNumber>
       <DefaultExpression>nextval(&apos;b_users_i_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
@@ -765,7 +763,7 @@ sequence|table|16706|16708|1
       <Comment>用于用户登录的用户名</Comment>
       <DataType>varchar(64)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>880</StateNumber>
+      <StateNumber>569</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="106" parent="38" name="ch_password_sha256">
@@ -773,7 +771,7 @@ sequence|table|16706|16708|1
       <Comment>SHA256加密的密码</Comment>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1040</StateNumber>
+      <StateNumber>649</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="107" parent="38" name="ch_email">
@@ -781,7 +779,7 @@ sequence|table|16706|16708|1
       <Comment>用户邮箱</Comment>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>880</StateNumber>
+      <StateNumber>569</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="108" parent="38" name="ch_realname">
@@ -789,7 +787,7 @@ sequence|table|16706|16708|1
       <Comment>用户姓名</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>880</StateNumber>
+      <StateNumber>569</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="109" parent="38" name="i_role">
@@ -797,7 +795,7 @@ sequence|table|16706|16708|1
       <Comment>0-普通用户,1-管理员用户,用于区分是否具有编辑权限</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>880</StateNumber>
+      <StateNumber>569</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="110" parent="38" name="i_department_id">
@@ -805,7 +803,7 @@ sequence|table|16706|16708|1
       <Comment>用户所属部门id</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>880</StateNumber>
+      <StateNumber>569</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="111" parent="38" name="b_activated">
@@ -813,7 +811,7 @@ sequence|table|16706|16708|1
       <Comment>是否已激活</Comment>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>880</StateNumber>
+      <StateNumber>569</StateNumber>
       <TypeId>16</TypeId>
     </column>
     <column id="112" parent="38" name="ch_phone">
@@ -821,110 +819,115 @@ sequence|table|16706|16708|1
       <Comment>用户电话</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>880</StateNumber>
+      <StateNumber>569</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="113" parent="38" name="b_users_pkey">
-      <ObjectId>16667</ObjectId>
-      <StateNumber>880</StateNumber>
+      <ObjectId>16393</ObjectId>
+      <StateNumber>569</StateNumber>
       <ColNames>i_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <index id="114" parent="38" name="b_users_ch_user_id_uindex">
-      <ObjectId>16762</ObjectId>
-      <StateNumber>987</StateNumber>
+    <index id="114" parent="38" name="b_users_ch_user_id_key">
+      <ObjectId>16395</ObjectId>
+      <StateNumber>569</StateNumber>
       <ColNames>ch_user_id</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="115" parent="38" name="b_users_pkey">
-      <ObjectId>16668</ObjectId>
-      <StateNumber>880</StateNumber>
+      <ObjectId>16394</ObjectId>
+      <StateNumber>569</StateNumber>
       <ColNames>i_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>b_users_pkey</UnderlyingIndexName>
     </key>
-    <column id="116" parent="39" name="i_id">
+    <key id="116" parent="38" name="b_users_ch_user_id_key">
+      <ObjectId>16396</ObjectId>
+      <StateNumber>569</StateNumber>
+      <ColNames>ch_user_id</ColNames>
+      <UnderlyingIndexName>b_users_ch_user_id_key</UnderlyingIndexName>
+    </key>
+    <column id="117" parent="39" name="i_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>924</StateNumber>
+      <StateNumber>613</StateNumber>
       <DefaultExpression>nextval(&apos;b_wanted_orders_i_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="117" parent="39" name="i_criminal_id">
+    <column id="118" parent="39" name="i_criminal_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>924</StateNumber>
+      <StateNumber>613</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="118" parent="39" name="ch_arrest_reason">
+    <column id="119" parent="39" name="ch_arrest_reason">
       <Position>3</Position>
       <Comment>通缉原因,罪行描述</Comment>
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>924</StateNumber>
+      <StateNumber>613</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="119" parent="39" name="i_arrest_level">
+    <column id="120" parent="39" name="i_arrest_level">
       <Position>4</Position>
       <Comment>通缉级别</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>924</StateNumber>
+      <StateNumber>613</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="120" parent="39" name="i_arrest_status">
+    <column id="121" parent="39" name="i_arrest_status">
       <Position>5</Position>
       <Comment>通缉状态:0-停止通缉,1-正在通缉</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>924</StateNumber>
+      <StateNumber>613</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="121" parent="39" name="i_district_id">
+    <column id="122" parent="39" name="i_district_id">
       <Position>6</Position>
       <Comment>统计范围行政区划id</Comment>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>924</StateNumber>
+      <StateNumber>613</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="122" parent="39" name="ts_created_at">
+    <column id="123" parent="39" name="i_created_by">
       <Position>7</Position>
-      <DataType>timestamp|0s</DataType>
+      <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>997</StateNumber>
-      <DefaultExpression>now()</DefaultExpression>
-      <TypeId>1114</TypeId>
+      <StateNumber>613</StateNumber>
+      <TypeId>23</TypeId>
     </column>
-    <column id="123" parent="39" name="ts_updated_at">
+    <column id="124" parent="39" name="ts_created_at">
       <Position>8</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>998</StateNumber>
+      <StateNumber>613</StateNumber>
       <DefaultExpression>now()</DefaultExpression>
       <TypeId>1114</TypeId>
     </column>
-    <column id="124" parent="39" name="i_created_by">
+    <column id="125" parent="39" name="ts_updated_at">
       <Position>9</Position>
-      <Comment>发布通缉用户id</Comment>
-      <DataType>integer|0s</DataType>
+      <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1035</StateNumber>
-      <TypeId>23</TypeId>
+      <StateNumber>613</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
     </column>
-    <index id="125" parent="39" name="b_wanted_orders_pkey">
-      <ObjectId>16717</ObjectId>
-      <StateNumber>998</StateNumber>
+    <index id="126" parent="39" name="b_wanted_orders_pkey">
+      <ObjectId>16445</ObjectId>
+      <StateNumber>613</StateNumber>
       <ColNames>i_id</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <key id="126" parent="39" name="b_wanted_orders_pkey">
-      <ObjectId>16718</ObjectId>
-      <StateNumber>924</StateNumber>
+    <key id="127" parent="39" name="b_wanted_orders_pkey">
+      <ObjectId>16446</ObjectId>
+      <StateNumber>613</StateNumber>
       <ColNames>i_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>b_wanted_orders_pkey</UnderlyingIndexName>

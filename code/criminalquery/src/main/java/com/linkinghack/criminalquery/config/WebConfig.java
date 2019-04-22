@@ -1,6 +1,7 @@
 package com.linkinghack.criminalquery.config;
 
 import com.linkinghack.criminalquery.interceptor.LoginInterceptor;
+import com.linkinghack.criminalquery.interceptor.LogsInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -9,7 +10,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor())
-                .addPathPatterns("*/safe/*");
+//        registry.addInterceptor(new LogsInterceptor())
+//                .addPathPatterns("/**");
+//        registry.addInterceptor(new LoginInterceptor())
+//                .addPathPatterns("/departments/**", "/criminal/**", "/districts/**", "/wanted/**");
+
     }
 }

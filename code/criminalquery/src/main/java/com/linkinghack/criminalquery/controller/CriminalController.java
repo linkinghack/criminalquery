@@ -1,5 +1,6 @@
 package com.linkinghack.criminalquery.controller;
 
+import com.linkinghack.criminalquery.TransferModel.SearchCriminalRequest;
 import com.linkinghack.criminalquery.model.Criminal;
 import com.linkinghack.criminalquery.TransferModel.UniversalResponse;
 import com.linkinghack.criminalquery.service.CriminalService;
@@ -25,7 +26,7 @@ public class CriminalController {
 
     /**
      * 非直接面对用户：查询某个特定id的逃犯相信信息，用于系统展示详细信息
-     * @param criminalID
+     * @param criminalID 逃犯id
      * @return
      */
     @GetMapping("/basicInfoByID/{id}")
@@ -64,12 +65,7 @@ public class CriminalController {
      * @return
      */
     @GetMapping("/criminals")
-    public UniversalResponse criminalInfo(@RequestParam(value = "name" ,required = false) String name, @RequestParam(value = "sex", required = false) Integer sex,
-                                          @RequestParam(value = "heightLow", required = false) Integer heightLow, @RequestParam(value = "heightHigh", required = false)Integer heightHigh,
-                                          @RequestParam("ageLow")Integer ageLow, @RequestParam("ageHigh") Integer ageHigh,
-                                          @RequestParam("job") String job, @RequestParam("workFor") String workFor,
-                                          @RequestParam("address") String address,
-                                          @RequestParam("otherFeatures") String otherFeatures,
+    public UniversalResponse criminalInfo(@RequestBody SearchCriminalRequest searchCriminalRequest,
                                           HttpServletRequest request, HttpSession session) {
         return UniversalResponse.Ok("ok");
     }

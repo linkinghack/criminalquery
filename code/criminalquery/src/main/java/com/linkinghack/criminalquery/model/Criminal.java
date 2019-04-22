@@ -16,6 +16,7 @@ public class Criminal {
     private Integer sex;
     private Integer height;
     private LocalDate birthday;
+    private Integer age; // 不存，由birthday算出
     private String bornPlace;
     private String idCardID;
     private String otherFeatures;

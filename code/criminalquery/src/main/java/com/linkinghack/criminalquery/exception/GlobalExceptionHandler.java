@@ -1,4 +1,4 @@
-package com.linkinghack.criminalquery.controller;
+package com.linkinghack.criminalquery.exception;
 
 import com.linkinghack.criminalquery.TransferModel.UniversalResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseBody
-    public UniversalResponse allError(Exception e){
+    public UniversalResponse allError(Exception e) {
+        e.printStackTrace();
         return UniversalResponse.UserFail(e.getClass().getTypeName() + " | " + e.getMessage());
     }
 
     @ExceptionHandler(org.springframework.web.bind.MissingServletRequestParameterException.class)
     @ResponseBody
-    public UniversalResponse missingParameter(){
+    public UniversalResponse missingParameter() {
         return UniversalResponse.UserFail("参数不足");
     }
 }

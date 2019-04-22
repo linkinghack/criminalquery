@@ -1,5 +1,5 @@
 server:
-  port: 80
+  port: 8080
 
 spring:
   datasource:
@@ -13,10 +13,7 @@ spring:
     password: "PC.c&Qv9z.B1Y8K"
   data:
     mongodb:
-      host: mongo
-      port: 27017
-      username: root
-      password: "iCOVX-Gj7WqlH4Z"
+      uri: mongodb://root:iCOVXGj7WqlH4Z@localhost/admin
 
 mybatis:
   mapper-locations:

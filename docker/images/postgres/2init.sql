@@ -1,3 +1,17 @@
+-- 更新时间自动更新 触发器
+create or REPLACE FUNCTION update_on_modified()
+RETURNS TRIGGER AS $$
+BEGIN
+	IF row(NEW.*) IS DISTINCT FROM row(OLD.*) THEN
+		NEW.ts_updated_at = now(); 
+			RETURN NEW;
+		ELSE
+			RETURN OLD;
+		END IF;
+END
+$$ LANGUAGE 'plpgsql';
+
+
 CREATE TABLE public.b_users (
     i_id SERIAL NOT NULL,
     ch_user_id varchar(64) NOT NULL UNIQUE,
@@ -105,6 +119,10 @@ COMMENT ON COLUMN public.b_criminals.i_created_by
     IS '逃犯信息创建人id';
 COMMENT ON COLUMN public.b_criminals.i_updated_by
     IS '最后一个更新逃犯信息人id';
+
+CREATE TRIGGER t_updatetime_criminal BEFORE UPDATE ON b_criminals
+    FOR EACH ROW
+    EXECUTE PROCEDURE update_on_modified();
 
 
 CREATE TABLE public.b_criminal_contacts (

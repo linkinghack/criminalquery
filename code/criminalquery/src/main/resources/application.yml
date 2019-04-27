@@ -23,6 +23,7 @@ mybatis:
 
 logging:
   file:
+  level: debug
 
 criminal:
   cos:

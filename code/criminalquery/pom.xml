@@ -20,6 +20,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.linkinghack</groupId>
+            <artifactId>criminalquery-model</artifactId>
+            <systemPath>${project.basedir}/../criminalquerymodel</systemPath>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>

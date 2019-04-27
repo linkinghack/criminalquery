@@ -2,55 +2,70 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a888af9f-005e-4f47-b334-1b0c178687fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_bson_3_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_3_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mongodb_mongodb_driver_core_3_8_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_mongodb_2_1_3_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_mongodb_2_1_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/TransferModel/DepartmentForTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/TransferModel/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/TransferModel/SearchCriminalRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/DepartmentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/DepartmentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mongo/DepartmentMongoOp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/exception/AddDepartmentFailedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/interceptor/LogsInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/service/DepartmentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/DepartmentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/config/StatusDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/data_model/Clue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/data_model/Criminal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/data_model/CriminalContact.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/data_model/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/data_model/District.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/data_model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/data_model/WantedOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/transfer_model/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/transfer_model/RegisterRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/transfer_model/SearchCriminalRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/transfer_model/UniversalResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-sso/src/main/java/com/linkinghack/criminalquerysso/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-sso/src/main/java/com/linkinghack/criminalquerysso/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-sso/src/main/java/com/linkinghack/criminalquerysso/model/UserStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-sso/src/main/java/com/linkinghack/criminalquerysso/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquery-sso/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/CriminalController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/DepartmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/DistrictController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/FileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/RootController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/WantedOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/dao/mapper/CriminalMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/dao/mapper/DepartmentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/dao/mapper/DistrictMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/dao/mapper/IntArrayHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/dao/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/dao/mongo/DepartmentMongoOp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/exception/AddDepartmentFailedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/exception/RegisterFailedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/inteceptor/LoginInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/model/DepartmentForTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/service/CriminalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/service/DepartmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/service/DistrictService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/resources/mapper/CriminalMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/resources/mapper/DepartmentMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/resources/mapper/DistrictMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../criminalquery-all/criminalquerybase/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_linkinghack_criminalquery_model_unknown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/560fa367-6bdb-49cf-a8c1-76ed5cc8da79.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/560fa367-6bdb-49cf-a8c1-76ed5cc8da79.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/560fa367-6bdb-49cf-a8c1-76ed5cc8da79/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/560fa367-6bdb-49cf-a8c1-76ed5cc8da79/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/criminalquery.iml" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquery.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/ComponentsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/ComponentsConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/CriminalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/CriminalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/DistrictController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/DistrictController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/CriminalMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/CriminalMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/DistrictMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/DistrictMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/interceptor/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/interceptor/LoginInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/Criminal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/Criminal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/District.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/District.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/service/DistrictService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/service/DistrictService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/CriminalMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/CriminalMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/DistrictMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/DistrictMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/images/postgres/2init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/images/postgres/2init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docker/images/postgres/3data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/images/postgres/3data.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docs/Requirement/国家逃犯在线查询系统-需求分析.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../docs/Requirement/国家逃犯在线查询系统-需求分析.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../docs/SystemDesign/系统设计UML.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/../../docs/SystemDesign/系统设计UML.mdj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../script/DistrictsDataTransfer/FindMongoExample.mongo" beforeDir="false" afterPath="$PROJECT_DIR$/../../script/DistrictsDataTransfer/FindMongoExample.mongo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../script/DistrictsDataTransfer/Transfer2DB.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../script/DistrictsDataTransfer/Transfer2DB.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../docker/images/nginx/criminal.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../../docker/images/nginx/criminal.conf" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/criminalquery-sso/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,24 +162,66 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/UserController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/WebConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+            <state relative-caret-position="168">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3704#3705#0" expanded="true" />
-                <element signature="e#3751#3752#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mongo/DepartmentMongoOp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/AppProperties.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/ComponentsConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/service/UserService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-208">
+              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/DepartmentController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/interceptor/LogsInterceptor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1827">
-              <caret line="91" column="100" lean-forward="true" selection-start-line="91" selection-start-column="100" selection-end-line="91" selection-end-column="100" />
+            <state relative-caret-position="462">
+              <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,19 +230,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/CriminalMapper.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/exception/GlobalExceptionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="21" column="25" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+            <state relative-caret-position="105">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/Criminal.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/exception/AddDepartmentFailedException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+            <state relative-caret-position="42">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/exception/RegisterFailedException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -239,7 +305,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/DistrictMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/service/DistrictService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mongo/DepartmentOp.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/District.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/CriminalController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/CriminalMapper.java" />
@@ -249,24 +314,25 @@
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/TransferModel/DepartmentForTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/Department.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/DistrictController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mongo/DepartmentMongoOp.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/560fa367-6bdb-49cf-a8c1-76ed5cc8da79/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/WebConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/exception/GlobalExceptionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/DepartmentMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/DepartmentMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/service/DepartmentService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/ComponentsConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/UserMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/UserMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/TransferModel/SearchCriminalRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/Criminal.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/CriminalMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/UserController.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/DepartmentController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/ComponentsConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/WebConfig.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/service/UserService.java" />
       </list>
     </option>
   </component>
@@ -293,11 +359,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="678" />
-    <option name="y" value="-948" />
-    <option name="width" value="1680" />
-    <option name="height" value="948" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="x" value="210" />
+    <option name="y" value="131" />
+    <option name="width" value="1260" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -305,7 +371,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -316,11 +382,6 @@
             <path>
               <item name="criminalquery" type="b2602c69:ProjectViewProjectNode" />
               <item name="criminalquery" type="462c0819:PsiDirectoryNode" />
-              <item name=".mvn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="criminalquery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="criminalquery" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -343,6 +404,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="criminalquery" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="criminalquery" type="b2602c69:ProjectViewProjectNode" />
+              <item name="criminalquery" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="criminalquery" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="criminalquery" type="b2602c69:ProjectViewProjectNode" />
@@ -442,32 +512,11 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="criminalquery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="criminalquery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="criminalquery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="criminalquery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="criminalquery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="criminalquery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="criminalquery" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -480,9 +529,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.25287357" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -502,10 +552,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.CriminalqueryApplication">
     <configuration name="CriminalqueryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="criminalquery" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.linkinghack.criminalquery.CriminalqueryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CriminalquerySsoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="criminalquery-sso" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.linkinghack.criminalquerysso.CriminalquerySsoApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -537,11 +594,19 @@
       <workItem from="1555587729215" duration="317000" />
       <workItem from="1555588203884" duration="5481000" />
       <workItem from="1555750521006" duration="26176000" />
+      <workItem from="1555937959915" duration="3075000" />
+      <workItem from="1556072804941" duration="658000" />
+      <workItem from="1556084531451" duration="911000" />
+      <workItem from="1556096001909" duration="23000" />
+      <workItem from="1556096060667" duration="152000" />
+      <workItem from="1556111403041" duration="5105000" />
+      <workItem from="1556161226528" duration="4416000" />
+      <workItem from="1556238338889" duration="1909000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122473000" />
+    <option name="totallyTimeSpent" value="138722000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -553,10 +618,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="678" y="-948" width="1680" height="948" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16788767" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1959707" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -566,7 +630,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32921812" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2489712" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.1563786" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -578,7 +642,7 @@
       <window_info anchor="bottom" id="Spring" order="11" weight="0.32921812" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Java Enterprise" order="13" weight="0.32921812" />
-      <window_info anchor="bottom" id="Messages" order="14" weight="0.3273453" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.3271605" />
       <window_info anchor="bottom" id="Database Console" order="15" weight="0.31936127" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -588,7 +652,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Database" order="8" visible="true" weight="0.23382173" />
+      <window_info anchor="right" id="Database" order="8" weight="0.17338218" />
       <window_info anchor="right" id="Bean Validation" order="9" />
     </layout>
   </component>
@@ -596,104 +660,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_districts">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_districts">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_districts">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_departments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_departments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_districts">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_districts">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_departments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_departments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_districts">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_districts">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_departments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_departments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_departments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/CriminalController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-763">
@@ -704,15 +670,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_districts">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" text="ch_name = '天津'">
-            <filter text="ch_name = '天津'" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_districts" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/DistrictMapper.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -733,34 +691,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_users" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/District.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -772,23 +703,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="56" lean-forward="true" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mongo/DepartmentMongoOp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -811,44 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/interceptor/LogsInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/interceptor/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="10" column="10" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/CriminalqueryApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/exception/RegisterFailedException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/exception/GlobalExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/Department.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -863,44 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="837">
           <caret line="83" column="52" selection-start-line="83" selection-start-column="52" selection-end-line="83" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/WebConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/AppProperties.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/ComponentsConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="20" column="86" selection-start-line="20" selection-start-column="86" selection-end-line="20" selection-end-column="86" />
-          <folding>
-            <element signature="e#624#846#0" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/DepartmentMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -923,34 +761,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/UserMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/TransferModel/SearchCriminalRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
           <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/Criminal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -967,6 +781,134 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_departments" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/DepartmentController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-dependencies/2.1.3.RELEASE/spring-boot-dependencies-2.1.3.RELEASE.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1061">
+          <caret line="499" column="12" selection-start-line="499" selection-start-column="12" selection-end-line="499" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MAVEN/com.linkinghack:criminalquery:0.0.1-SNAPSHOT">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MAVEN</ID>
+          <OriginalElement>com.linkinghack:criminalquery:0.0.1-SNAPSHOT</OriginalElement>
+          <nodes>
+            <node x="" y="">com.linkinghack:criminalquery:0.0.1-SNAPSHOT</node>
+            <node x="" y="">com.linkinghack:criminalquery-model:jar:unknown</node>
+            <node x="" y="">org.springframework.boot:spring-boot-configuration-processor:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:2.1.3.RELEASE/ch.qos.logback:logback-classic:jar:1.2.3</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:2.1.3.RELEASE/ch.qos.logback:logback-classic:jar:1.2.3/ch.qos.logback:logback-core:jar:1.2.3</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:2.1.3.RELEASE/org.apache.logging.log4j:log4j-to-slf4j:jar:2.11.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:2.1.3.RELEASE/org.apache.logging.log4j:log4j-to-slf4j:jar:2.11.2/org.apache.logging.log4j:log4j-api:jar:2.11.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-logging:jar:2.1.3.RELEASE/org.slf4j:jul-to-slf4j:jar:1.7.25</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:2.1.3.RELEASE/javax.annotation:javax.annotation-api:jar:1.3.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter:jar:2.1.3.RELEASE/org.yaml:snakeyaml:jar:1.23</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-json:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-json:jar:2.1.3.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.9.8</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-json:jar:2.1.3.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.9.8/com.fasterxml.jackson.core:jackson-annotations:jar:2.9.0</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-json:jar:2.1.3.RELEASE/com.fasterxml.jackson.core:jackson-databind:jar:2.9.8/com.fasterxml.jackson.core:jackson-core:jar:2.9.8</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-json:jar:2.1.3.RELEASE/com.fasterxml.jackson.datatype:jackson-datatype-jdk8:jar:2.9.8</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-json:jar:2.1.3.RELEASE/com.fasterxml.jackson.datatype:jackson-datatype-jsr310:jar:2.9.8</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-json:jar:2.1.3.RELEASE/com.fasterxml.jackson.module:jackson-module-parameter-names:jar:2.9.8</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:2.1.3.RELEASE/org.apache.tomcat.embed:tomcat-embed-core:jar:9.0.16</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:2.1.3.RELEASE/org.apache.tomcat.embed:tomcat-embed-el:jar:9.0.16</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-starter-tomcat:jar:2.1.3.RELEASE/org.apache.tomcat.embed:tomcat-embed-websocket:jar:9.0.16</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.hibernate.validator:hibernate-validator:jar:6.0.14.Final</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.hibernate.validator:hibernate-validator:jar:6.0.14.Final/javax.validation:validation-api:jar:2.0.1.Final</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.hibernate.validator:hibernate-validator:jar:6.0.14.Final/org.jboss.logging:jboss-logging:jar:3.3.2.Final</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.hibernate.validator:hibernate-validator:jar:6.0.14.Final/com.fasterxml:classmate:jar:1.4.0</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework:spring-web:jar:5.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework:spring-web:jar:5.1.5.RELEASE/org.springframework:spring-beans:jar:5.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework:spring-webmvc:jar:5.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework:spring-webmvc:jar:5.1.5.RELEASE/org.springframework:spring-aop:jar:5.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework:spring-webmvc:jar:5.1.5.RELEASE/org.springframework:spring-context:jar:5.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-web:jar:2.1.3.RELEASE/org.springframework:spring-webmvc:jar:5.1.5.RELEASE/org.springframework:spring-expression:jar:5.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-mongodb:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-mongodb:jar:2.1.3.RELEASE/org.mongodb:mongodb-driver:jar:3.8.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-mongodb:jar:2.1.3.RELEASE/org.mongodb:mongodb-driver:jar:3.8.2/org.mongodb:bson:jar:3.8.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-mongodb:jar:2.1.3.RELEASE/org.mongodb:mongodb-driver:jar:3.8.2/org.mongodb:mongodb-driver-core:jar:3.8.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-mongodb:jar:2.1.3.RELEASE/org.springframework.data:spring-data-mongodb:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-mongodb:jar:2.1.3.RELEASE/org.springframework.data:spring-data-mongodb:jar:2.1.5.RELEASE/org.springframework:spring-tx:jar:5.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-mongodb:jar:2.1.3.RELEASE/org.springframework.data:spring-data-mongodb:jar:2.1.5.RELEASE/org.springframework.data:spring-data-commons:jar:2.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-data-mongodb:jar:2.1.3.RELEASE/org.springframework.data:spring-data-mongodb:jar:2.1.5.RELEASE/org.slf4j:slf4j-api:jar:1.7.25</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:2.0.0</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:2.0.0/org.springframework.boot:spring-boot-starter-jdbc:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:2.0.0/org.springframework.boot:spring-boot-starter-jdbc:jar:2.1.3.RELEASE/com.zaxxer:HikariCP:jar:3.2.0</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:2.0.0/org.springframework.boot:spring-boot-starter-jdbc:jar:2.1.3.RELEASE/org.springframework:spring-jdbc:jar:5.1.5.RELEASE</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:2.0.0/org.mybatis.spring.boot:mybatis-spring-boot-autoconfigure:jar:2.0.0</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:2.0.0/org.mybatis:mybatis:jar:3.5.0</node>
+            <node x="" y="">org.mybatis.spring.boot:mybatis-spring-boot-starter:jar:2.0.0/org.mybatis:mybatis-spring:jar:2.0.0</node>
+            <node x="" y="">org.springframework.boot:spring-boot-devtools:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-devtools:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-devtools:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-autoconfigure:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.postgresql:postgresql:jar:42.2.5</node>
+            <node x="" y="">org.projectlombok:lombok:jar:1.18.6</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-test:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.springframework.boot:spring-boot-test-autoconfigure:jar:2.1.3.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/com.jayway.jsonpath:json-path:jar:2.4.0</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/com.jayway.jsonpath:json-path:jar:2.4.0/net.minidev:json-smart:jar:2.3</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/com.jayway.jsonpath:json-path:jar:2.4.0/net.minidev:json-smart:jar:2.3/net.minidev:accessors-smart:jar:1.2</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/com.jayway.jsonpath:json-path:jar:2.4.0/net.minidev:json-smart:jar:2.3/net.minidev:accessors-smart:jar:1.2/org.ow2.asm:asm:jar:5.0.4</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/junit:junit:jar:4.12</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.assertj:assertj-core:jar:3.11.1</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.mockito:mockito-core:jar:2.23.4</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.mockito:mockito-core:jar:2.23.4/net.bytebuddy:byte-buddy:jar:1.9.10</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.mockito:mockito-core:jar:2.23.4/net.bytebuddy:byte-buddy-agent:jar:1.9.10</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.mockito:mockito-core:jar:2.23.4/org.objenesis:objenesis:jar:2.6</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.hamcrest:hamcrest-core:jar:1.3</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.hamcrest:hamcrest-library:jar:1.3</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.skyscreamer:jsonassert:jar:1.5.0</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.skyscreamer:jsonassert:jar:1.5.0/com.vaadin.external.google:android-json:jar:0.0.20131108.vaadin1</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.springframework:spring-core:jar:5.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.springframework:spring-core:jar:5.1.5.RELEASE/org.springframework:spring-jcl:jar:5.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.springframework:spring-test:jar:5.1.5.RELEASE</node>
+            <node x="" y="">org.springframework.boot:spring-boot-starter-test:jar:2.1.3.RELEASE/org.xmlunit:xmlunit-core:jar:2.6.2</node>
+            <node x="" y="">org.springframework.restdocs:spring-restdocs-mockmvc:jar:2.0.3.RELEASE</node>
+            <node x="" y="">org.springframework.restdocs:spring-restdocs-mockmvc:jar:2.0.3.RELEASE/javax.servlet:javax.servlet-api:jar:4.0.1</node>
+            <node x="" y="">org.springframework.restdocs:spring-restdocs-mockmvc:jar:2.0.3.RELEASE/org.springframework.restdocs:spring-restdocs-core:jar:2.0.3.RELEASE</node>
+            <node x="" y="">commons-codec:commons-codec:jar:1.12</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0454421308450061" x="546.0" y="429.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>All</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="71" selection-start-line="71" selection-end-line="75" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/interceptor/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/CriminalMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -974,34 +916,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://560fa367-6bdb-49cf-a8c1-76ed5cc8da79/database/postgres/schema/public/table/b_departments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/model/Criminal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="41" column="30" lean-forward="true" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+        <state relative-caret-position="840">
+          <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3704#3705#0" expanded="true" />
-            <element signature="e#3751#3752#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/controller/DepartmentController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/DepartmentMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1827">
-          <caret line="91" column="100" lean-forward="true" selection-start-line="91" selection-start-column="100" selection-end-line="91" selection-end-column="100" />
+        <state relative-caret-position="567">
+          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mapper/UserMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="11" selection-start-line="11" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/CriminalqueryApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/interceptor/LogsInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="31" column="61" selection-start-line="31" selection-start-column="61" selection-end-line="31" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/exception/GlobalExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/dao/mongo/DepartmentMongoOp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/exception/RegisterFailedException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/exception/AddDepartmentFailedException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/AppProperties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/config/ComponentsConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/linkinghack/criminalquery/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-208">
+          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis-config.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
@@ -1020,6 +1063,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
+          <last-edited>Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1066,11 +1110,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0</last-edited>
+          <last-edited>Maven: com.linkinghack:criminalquery-model:unknown</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.25287357" />
               </list>
             </option>
           </splitter-proportions>

@@ -13,7 +13,7 @@ services:
         image: adminer
         restart: always
         ports:
-        - 8082:8080
+        - 9002:8080
 
     redis:
         build: images/redis
@@ -38,7 +38,7 @@ services:
         image: mongo-express
         restart: always
         ports:
-            - 8081:8081
+            - 9001:8081
         environment:
             ME_CONFIG_MONGODB_ADMINUSERNAME: root
             ME_CONFIG_MONGODB_ADMINPASSWORD: "iCOVXGj7WqlH4Z"

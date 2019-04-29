@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -14,6 +15,7 @@ public class Clue {
     private Integer criminalID;
 
     private String fileIDs;
+    private List<String> fileURLs;
     private String description;
 
     private LocalDateTime createdAt;

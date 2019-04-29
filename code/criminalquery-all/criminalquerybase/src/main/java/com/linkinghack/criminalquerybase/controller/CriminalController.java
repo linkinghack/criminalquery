@@ -1,6 +1,7 @@
 package com.linkinghack.criminalquerybase.controller;
 
 import com.linkinghack.criminalquerybase.service.CriminalService;
+import com.linkinghack.criminalquerymodel.data_model.Clue;
 import com.linkinghack.criminalquerymodel.data_model.Criminal;
 import com.linkinghack.criminalquerymodel.data_model.User;
 import com.linkinghack.criminalquerymodel.transfer_model.SearchCriminalRequest;
@@ -25,13 +26,17 @@ public class CriminalController {
     }
 
     /**
-     * 非直接面对用户：查询某个特定id的逃犯相信信息，用于系统展示详细信息
+     * 非直接面对用户：查询某个特定id的逃犯详细信息，用于系统展示详细信息
      * @param criminalID 逃犯id
      * @return
      */
-    @GetMapping("/basicInfoByID/{id}")
-    public UniversalResponse criminalInfoById(@PathVariable("id")Integer criminalID){
-        return UniversalResponse.Ok("");
+    @GetMapping("/detailByID/{id}")
+    public UniversalResponse criminalDetailById(@PathVariable("id")Integer criminalID){
+        String fn = "<GET>[/criminal/basicInfoByID/{ID}]";
+        logger.info("@Request{} criminalID:{}", fn, criminalID);
+        UniversalResponse response = criminalService.getCriminalDetail(criminalID);
+        logger.info("@Response{} response:{}", fn, response);
+        return response;
     }
 
     /**
@@ -99,6 +104,48 @@ public class CriminalController {
         }
         UniversalResponse response = criminalService.createCriminal(criminal);
         logger.info("@Response{} response: {}", fn, response);
+        return response;
+    }
+
+    /**
+     * 更新逃犯基本信息，选择性更新，仅criminalID 为必要参数
+     * @param criminal 待更新逃犯信息
+     * @param request 用于获取当前用户
+     * @return 更新结果
+     */
+    @PutMapping("/basicInfo")
+    public UniversalResponse updateCriminal(@RequestBody Criminal criminal, HttpServletRequest request) {
+        String fn = "<PUT>[/criminal/basicInfo]";
+        UniversalResponse response ;
+        User user = (User) request.getAttribute("user");
+        logger.info("@Request{}  criminal:{}, User:{}", fn, criminal, user);
+        if (criminal.getId() == null){
+            response = UniversalResponse.UserFail("逃犯ID为必要参数");
+        }
+
+        response = criminalService.updateCriminal(criminal, user);
+
+        logger.info("@Response{} response:{}", fn, response);
+        return response;
+    }
+
+    /**
+     * 添加逃犯线索
+     * @param clue 线索对象, 必要参数：criminalID
+     * @param request 用于获取当前用户
+     * @return 添加结果
+     */
+    @PostMapping("/clue")
+    public UniversalResponse addClue(Clue clue, HttpServletRequest request){
+        String fn = "<POST>[/criminal/clue]";
+        User user = (User) request.getAttribute("user");
+        UniversalResponse response;
+        logger.info("@Request{} clue:{}, User:{}", fn, clue, user);
+        if (clue.getCriminalID() == null){
+            response = UniversalResponse.UserFail("criminalID是必要参数");
+        }
+
+        response = criminalService.addClue(clue);
         return response;
     }
 

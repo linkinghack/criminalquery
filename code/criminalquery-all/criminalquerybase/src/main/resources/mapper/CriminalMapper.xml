@@ -20,19 +20,21 @@
     <update id="updateCriminal" keyColumn="i_id" keyProperty="id"
             parameterType="com.linkinghack.criminalquerymodel.data_model.Criminal">
         update b_criminals
-        set ch_name            = #{name},
-            i_sex              = #{sex},
-            i_height_cm        = #{height},
-            d_birthday         = #{birthday},
-            ch_born_place      = #{bornPlace},
-            ch_portrait_fileid = #{portrainFileID},
-            ch_edu_background  = #{eduBackground},
-            ch_job             = #{job},
-            ch_workfor         = #{workFor},
-            ch_phone           = #{phone},
-            ch_address         = #{address},
+        <set>
+            <if test="name != null">ch_name            = #{name},</if>
+            <if test="sex != null">i_sex = #{sex},</if>
+            <if test="height != null">i_height_cm        = #{height},</if>
+            <if test="birthday != null">d_birthday         = #{birthday},</if>
+            <if test="bornPlace != null">ch_born_place      = #{bornPlace},</if>
+            <if test="portraitFileID != null">ch_portrait_fileid = #{portraitFileID},</if>
+            <if test="eduBackground != null">ch_edu_background  = #{eduBackground},</if>
+            <if test="job != null">ch_job             = #{job},</if>
+            <if test="workFor != null">ch_workfor         = #{workFor},</if>
+            <if test="phone != null">ch_phone           = #{phone},</if>
+            <if test="address != null">ch_address         = #{address},</if>
             i_updated_by       = #{updatedBy},
             ts_updated_at      = now()
+        </set>
         where i_id = #{id}
     </update>
     <update id="updateCriminalDate" parameterType="Integer">
@@ -40,6 +42,22 @@
         set ts_updated_at = now()
         where i_id = #{id}
     </update>
+
+    <update id="updateWantedOrder" keyColumn="i_id" keyProperty="id" parameterType="com.linkinghack.criminalquerymodel.data_model.WantedOrder">
+        update b_wanted_orders
+        <set>
+            <if test="arrestStatus != null">i_arrest_status = #{arrestStatus}, </if>
+            <if test="arrestReason != null">ch_arrest_reason = #{arrestReason},</if>
+            <if test="arrestLevel != null">i_arrest_level = #{arrestLevel},</if>
+            <if test="districtID != null">i_district_id = #{districtID},</if>
+            ts_updated_at = now()
+        </set>
+        where i_id = #{id}
+    </update>
+
+    <delete id="deleteWantedOrder" parameterType="Integer">
+        delete from b_wanted_orders where i_id = #{id}
+    </delete>
 
     <insert id="addCriminalContact" parameterType="com.linkinghack.criminalquerymodel.data_model.CriminalContact" keyColumn="i_id"
             keyProperty="id" useGeneratedKeys="true">
@@ -54,7 +72,7 @@
     </insert>
 
     <select id="getCriminalInfo" resultMap="criminalInfo" parameterType="Integer">
-        select *
+        select i_id ,ch_name, i_sex, i_height_cm, d_birthday, ( CURRENT_DATE - d_birthday)/365 as age, ch_born_place, ch_idcard_id, ch_other_features, ch_portrait_fileid, ch_edu_background, ch_job, ch_workfor, ch_phone, ch_address, ts_created_at, ts_updated_at, i_created_by, i_updated_by
         from b_criminals
         where i_id = #{id}
     </select>
@@ -80,6 +98,18 @@
         </where>
     </select>
 
+    <select id="getWantedOrdersOfACriminal" resultMap="wantedOrder">
+        select * from b_wanted_orders where i_criminal_id = #{criminalID}
+    </select>
+
+    <select id="getCluesOfACriminal" resultMap="clue">
+        select * from b_clue where i_criminal_id = #{criminalID}
+    </select>
+
+    <select id="getContactsOfACriminal" resultMap="criminalContactInfo">
+        select * from b_criminal_contacts where i_criminal_id = #{criminalID}
+    </select>
+
     <resultMap id="criminalInfo" type="com.linkinghack.criminalquerymodel.data_model.Criminal">
         <id column="i_id" property="id"/>
         <result column="ch_name" property="name"/>
@@ -101,6 +131,14 @@
         <result column="i_updated_by" property="updatedBy"/>
     </resultMap>
 
+    <resultMap id="clue" type="com.linkinghack.criminalquerymodel.data_model.Clue">
+        <id column="i_id" property="id" />
+        <result column="i_criminal_id" property="criminalID"/>
+        <result column="ch_fileids" property="fileIDs"/>
+        <result column="ch_description" property="description"/>
+        <result column="ts_created_at" property="createdAt"/>
+    </resultMap>
+
     <resultMap id="criminalContactInfo" type="com.linkinghack.criminalquerymodel.data_model.CriminalContact">
         <id column="i_id" property="id"/>
         <result column="i_criminal_id" property="criminalID"/>
@@ -120,6 +158,7 @@
         <result column="i_arrest_status" property="arrestStatus"/>
         <result column="i_district_id" property="districtID"/>
         <result column="ts_created_at" property="createdAt"/>
+        <result column="ts_updated_at" property="updatedAt"/>
     </resultMap>
 
 </mapper>

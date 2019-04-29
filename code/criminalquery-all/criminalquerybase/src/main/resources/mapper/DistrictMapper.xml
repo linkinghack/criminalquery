@@ -14,6 +14,10 @@
         <result column="ch_county_name" property="county"/>
     </resultMap>
 
+
+    <select id="selectDistrictById" parameterType="Integer" resultMap="oneDistrict">
+        select * from b_districts where i_id = #{id}
+    </select>
     <select id="selectDistrictsByLevel" parameterType="Integer" resultMap="oneDistrict">
         select * from b_districts where i_level = #{level}
     </select>

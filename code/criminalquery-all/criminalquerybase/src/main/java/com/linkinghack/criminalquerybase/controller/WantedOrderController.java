@@ -59,9 +59,9 @@ public class WantedOrderController {
 
     /**
      * 发起通缉
-     * @param wantedOrder
-     * @param request
-     * @return
+     * @param wantedOrder 新通缉令对象
+     * @param request 用于获取User
+     * @return 包含成功插入后的通缉令, id generated
      */
     @PostMapping("/order")
     public UniversalResponse createWantedOrder(@RequestBody WantedOrder wantedOrder,
@@ -69,8 +69,42 @@ public class WantedOrderController {
         User user = (User) request.getAttribute("user");
         String fn = "<POST>[/wanted/order]";
         logger.info("@Request{} request:{}", fn, wantedOrder);
+        if(wantedOrder.getArrestReason() == null || wantedOrder.getArrestLevel()==null){
+            logger.warn("发起通缉参数不足");
+            return UniversalResponse.UserFail("参数不足");
+        }
         UniversalResponse response = criminalService.createWantedOrder(wantedOrder.getCriminalID(), wantedOrder.getArrestReason(), wantedOrder.getArrestLevel(),
                 wantedOrder.getArrestStatus(), wantedOrder.getDistrictID(), user.getId());
+        logger.info("@Response{} response:{}", fn, response);
+        return response;
+    }
+
+    /**
+     * 更新通缉令统一接口，支持仅更新部分字段,不更新部分传null即可
+     * @param order 待更新的通缉令对象，唯一必要参数 通缉令ID
+     * @return 更新结果
+     */
+    @PutMapping("/order")
+    public UniversalResponse updateWantedOrder(@RequestBody WantedOrder order) {
+        String fn = "<PUT>[/wanted/order]";
+        logger.info("@Request{} wantedOrder:{}", fn ,order);
+        if (order.getId() == null)
+            return UniversalResponse.UserFail("参数不足");
+        UniversalResponse response = criminalService.updateWantedOrder(order);
+        logger.info("@Response{} response:{}", fn, response);
+        return response;
+    }
+
+    /**
+     * 删除通缉令
+     * @param orderID 通缉令id
+     * @return 删除结果
+     */
+    @DeleteMapping("/order/{id}")
+    public UniversalResponse deleteWantedOrder (@PathVariable("id") Integer orderID) {
+        String fn = "<DELETE>[/wanted/order/{id}]";
+        logger.info("@Request{} orderID:{}", fn, orderID);
+        UniversalResponse response = criminalService.deleteWantedOrder(orderID);
         logger.info("@Response{} response:{}", fn, response);
         return response;
     }

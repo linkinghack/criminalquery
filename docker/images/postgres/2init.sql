@@ -179,6 +179,9 @@ COMMENT ON COLUMN public.b_wanted_orders.i_arrest_status
 COMMENT ON COLUMN public.b_wanted_orders.i_district_id
     IS '统计范围行政区划id';
 
+create index orders_level_district_id_reason_index
+	on b_wanted_orders (i_arrest_level, i_district_id, ch_arrest_reason);
+
 
 CREATE TABLE public.b_districts (
     i_id integer NOT NULL,

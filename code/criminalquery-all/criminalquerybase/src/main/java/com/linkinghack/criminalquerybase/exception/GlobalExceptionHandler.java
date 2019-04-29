@@ -11,7 +11,7 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public UniversalResponse allError(Exception e) {
         e.printStackTrace();
-        return UniversalResponse.UserFail(e.getClass().getTypeName() + " | " + e.getMessage());
+        return UniversalResponse.UserFail(e.getMessage());
     }
 
     @ExceptionHandler(org.springframework.web.bind.MissingServletRequestParameterException.class)

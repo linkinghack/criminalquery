@@ -17,6 +17,10 @@ public interface CriminalMapper {
 
     List<WantedOrder> getWantedOrdersOfACriminal(Integer criminalID);
 
+    List<Clue> getCluesOfACriminal(Integer criminalID);
+
+    List<CriminalContact> getContactsOfACriminal(Integer criminalID);
+
     List<WantedOrder> getWantedOrdersOfADistrict(Integer districtID);
 
     List<Criminal> searchCriminals(SearchCriminalRequest request);
@@ -26,6 +30,9 @@ public interface CriminalMapper {
     Integer createCriminal(Criminal criminal);
     Integer updateCriminal(Criminal criminal);
     Integer updateCriminalDate(Integer id);
+
+    Integer updateWantedOrder( WantedOrder order);
+    Integer deleteWantedOrder(Integer id);
 
     Integer addCriminalContact(CriminalContact contact);
     Integer addClue(Clue clue);

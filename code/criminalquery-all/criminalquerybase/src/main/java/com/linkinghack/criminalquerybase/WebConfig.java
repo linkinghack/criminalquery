@@ -19,7 +19,7 @@ public class WebConfig implements WebMvcConfigurer {
         // 需要登录权限校验
         registry.addInterceptor(this.loginInterceptor)
                 .addPathPatterns("/index", "/criminal/**", "/departments/department/**",
-                        "/departments/membersCount", "/wanted/**");
+                        "/departments/membersCount", "/wanted/**", "/**");
 
     }
 }

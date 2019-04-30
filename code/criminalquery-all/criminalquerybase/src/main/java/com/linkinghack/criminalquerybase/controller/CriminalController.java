@@ -42,11 +42,15 @@ public class CriminalController {
     /**
      * 精确查找：查询某个身份证号对应的逃犯信息
      * @param idCardID 身份证号
-     * @return
+     * @return 搜索结果
      */
-    @GetMapping("/basicInfoByIDCard/{idCardID}")
+    @GetMapping("/criminalByIDCard/{idCardID}")
     public UniversalResponse criminalInfoByIdCard(@PathVariable("idCardID")String idCardID) {
-        return  UniversalResponse.Ok("");
+        String fn = "<GET>[/criminal/criminalByIDCard/{idCardID}]";
+        logger.info("@Request{} idCardID:{}", fn , idCardID);
+        UniversalResponse response = criminalService.searchCriminalByIDCardID(idCardID);
+        logger.info("@Response{} response:{}", fn, response);
+        return  response;
     }
 
     /**
@@ -59,21 +63,24 @@ public class CriminalController {
         return UniversalResponse.Ok("ok");
     }
 
-    /**
+    /** <GET>[/criminal/criminals]
      * 模糊查找：按逃犯查询的多条件高级检索方法
-     * @param searchCriminalRequest
-     * @param request
-     * @param request
-     * @return
+     * @param searchCriminalRequest 检索条件
+     * @param request 用于获取当前用户
+     * @return {totalCount: 123, criminals: [{},{},...]}
      */
     @GetMapping("/criminals")
-    public UniversalResponse criminalInfo(@RequestBody SearchCriminalRequest searchCriminalRequest,
+    public UniversalResponse criminalInfo(SearchCriminalRequest searchCriminalRequest,
                                           HttpServletRequest request) {
-        // TODO
-        return UniversalResponse.Ok("ok");
+        String fn = "<GET>[/criminal/criminals]";
+        User user = (User) request.getAttribute("user");
+        logger.info("@Request{} request:{}, User:{}", fn, searchCriminalRequest, user);
+        UniversalResponse response = criminalService.searchCriminals(searchCriminalRequest);
+        logger.info("@Response{} response:{}", fn, response);
+        return response;
     }
 
-    /**
+    /** <POST>[/criminal/basicInfo]
      * 创建新的逃犯基本信息，若新建通缉令时库中无对应逃犯信息应该先调用此接口
      * @param criminal 逃犯基本信息
      *   String name
@@ -107,7 +114,7 @@ public class CriminalController {
         return response;
     }
 
-    /**
+    /** <PUT>[/criminal/basicInfo]
      * 更新逃犯基本信息，选择性更新，仅criminalID 为必要参数
      * @param criminal 待更新逃犯信息
      * @param request 用于获取当前用户
@@ -129,14 +136,14 @@ public class CriminalController {
         return response;
     }
 
-    /**
+    /** <POST>[/criminal/clue]
      * 添加逃犯线索
      * @param clue 线索对象, 必要参数：criminalID
      * @param request 用于获取当前用户
      * @return 添加结果
      */
     @PostMapping("/clue")
-    public UniversalResponse addClue(Clue clue, HttpServletRequest request){
+    public UniversalResponse addClue(@RequestBody Clue clue, HttpServletRequest request){
         String fn = "<POST>[/criminal/clue]";
         User user = (User) request.getAttribute("user");
         UniversalResponse response;

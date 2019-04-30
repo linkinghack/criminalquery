@@ -8,7 +8,7 @@ spring:
     password: "*6Z,<[9A97Mp;6W"
     driver-class-name: org.postgresql.Driver
     hikari:
-      minimum-idle: 5
+      minimum-idle: 2
   redis:
     host: redis
     port: 6379

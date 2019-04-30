@@ -17,6 +17,8 @@ public class SearchCriminalRequest {
     private Integer heightEnd;
     private Integer ageStart;
     private Integer ageEnd;
+    private String phone;
+    private String eduBackground;
     private String job;
     private String workFor;
     private String address;
@@ -26,9 +28,13 @@ public class SearchCriminalRequest {
     private String arrestReason; //通缉原因
     private Integer arrestLevel;
     private Integer arrestStatus;
-    private Integer[] districtIDs; // 多范围搜索
+    private Integer districtID; // 范围搜索
     private LocalDateTime arrestCreateTimeStart;
     private LocalDateTime arrestCreateTimeEnd;
     private LocalDateTime arrestUpdateTimeStart;
     private LocalDateTime arrestUpdateTimeEnd;
+
+    private Integer pageSize;
+    private Integer page;
+    private Integer offset;
 }

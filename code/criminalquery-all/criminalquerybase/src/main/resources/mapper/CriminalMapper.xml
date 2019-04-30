@@ -3,13 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.linkinghack.criminalquerybase.dao.mapper.CriminalMapper">
-    <insert id="createWantedOrder" parameterType="com.linkinghack.criminalquerymodel.data_model.WantedOrder" keyColumn="i_id"
+    <insert id="createWantedOrder" parameterType="com.linkinghack.criminalquerymodel.data_model.WantedOrder"
+            keyColumn="i_id"
             keyProperty="id" useGeneratedKeys="true">
-        insert into b_wanted_orders(i_criminal_id, ch_arrest_reason, i_arrest_level, i_arrest_status, i_district_id,i_created_by)
+        insert into b_wanted_orders(i_criminal_id, ch_arrest_reason, i_arrest_level, i_arrest_status, i_district_id,
+                                    i_created_by)
         values (#{criminalID}, #{arrestReason}, #{arrestLevel}, #{arrestStatus}, #{districtID}, #{createdBy})
     </insert>
 
-    <insert id="createCriminal" useGeneratedKeys="true" parameterType="com.linkinghack.criminalquerymodel.data_model.Criminal"
+    <insert id="createCriminal" useGeneratedKeys="true"
+            parameterType="com.linkinghack.criminalquerymodel.data_model.Criminal"
             keyColumn="i_id" keyProperty="id">
         insert into b_criminals(ch_name, i_sex, i_height_cm, d_birthday, ch_born_place, ch_idcard_id, ch_other_features,
                                 ch_portrait_fileid, ch_edu_background, ch_job, ch_workfor, ch_phone, ch_address,
@@ -21,19 +24,19 @@
             parameterType="com.linkinghack.criminalquerymodel.data_model.Criminal">
         update b_criminals
         <set>
-            <if test="name != null">ch_name            = #{name},</if>
+            <if test="name != null">ch_name = #{name},</if>
             <if test="sex != null">i_sex = #{sex},</if>
-            <if test="height != null">i_height_cm        = #{height},</if>
-            <if test="birthday != null">d_birthday         = #{birthday},</if>
-            <if test="bornPlace != null">ch_born_place      = #{bornPlace},</if>
+            <if test="height != null">i_height_cm = #{height},</if>
+            <if test="birthday != null">d_birthday = #{birthday},</if>
+            <if test="bornPlace != null">ch_born_place = #{bornPlace},</if>
             <if test="portraitFileID != null">ch_portrait_fileid = #{portraitFileID},</if>
-            <if test="eduBackground != null">ch_edu_background  = #{eduBackground},</if>
-            <if test="job != null">ch_job             = #{job},</if>
-            <if test="workFor != null">ch_workfor         = #{workFor},</if>
-            <if test="phone != null">ch_phone           = #{phone},</if>
-            <if test="address != null">ch_address         = #{address},</if>
-            i_updated_by       = #{updatedBy},
-            ts_updated_at      = now()
+            <if test="eduBackground != null">ch_edu_background = #{eduBackground},</if>
+            <if test="job != null">ch_job = #{job},</if>
+            <if test="workFor != null">ch_workfor = #{workFor},</if>
+            <if test="phone != null">ch_phone = #{phone},</if>
+            <if test="address != null">ch_address = #{address},</if>
+            i_updated_by = #{updatedBy},
+            ts_updated_at = now()
         </set>
         where i_id = #{id}
     </update>
@@ -43,10 +46,11 @@
         where i_id = #{id}
     </update>
 
-    <update id="updateWantedOrder" keyColumn="i_id" keyProperty="id" parameterType="com.linkinghack.criminalquerymodel.data_model.WantedOrder">
+    <update id="updateWantedOrder" keyColumn="i_id" keyProperty="id"
+            parameterType="com.linkinghack.criminalquerymodel.data_model.WantedOrder">
         update b_wanted_orders
         <set>
-            <if test="arrestStatus != null">i_arrest_status = #{arrestStatus}, </if>
+            <if test="arrestStatus != null">i_arrest_status = #{arrestStatus},</if>
             <if test="arrestReason != null">ch_arrest_reason = #{arrestReason},</if>
             <if test="arrestLevel != null">i_arrest_level = #{arrestLevel},</if>
             <if test="districtID != null">i_district_id = #{districtID},</if>
@@ -56,32 +60,91 @@
     </update>
 
     <delete id="deleteWantedOrder" parameterType="Integer">
-        delete from b_wanted_orders where i_id = #{id}
+        delete
+        from b_wanted_orders
+        where i_id = #{id}
     </delete>
 
-    <insert id="addCriminalContact" parameterType="com.linkinghack.criminalquerymodel.data_model.CriminalContact" keyColumn="i_id"
+    <insert id="addCriminalContact" parameterType="com.linkinghack.criminalquerymodel.data_model.CriminalContact"
+            keyColumn="i_id"
             keyProperty="id" useGeneratedKeys="true">
         insert into b_criminal_contacts(i_criminal_id, ch_name, i_sex, d_birthday, ch_relation, ch_phone, ch_address)
         values (#{criminalID}, #{name}, #{sex}, #{birthday}, #{relation}, #{phone}, #{address})
     </insert>
 
-    <insert id="addClue" parameterType="com.linkinghack.criminalquerymodel.data_model.Clue" keyColumn="i_id" keyProperty="id"
+    <insert id="addClue" parameterType="com.linkinghack.criminalquerymodel.data_model.Clue" keyColumn="i_id"
+            keyProperty="id"
             useGeneratedKeys="true">
         insert into b_clue(i_criminal_id, ch_fileids, ch_description)
         VALUES (#{criminalID}, #{fileIDs}, #{description})
     </insert>
 
     <select id="getCriminalInfo" resultMap="criminalInfo" parameterType="Integer">
-        select i_id ,ch_name, i_sex, i_height_cm, d_birthday, ( CURRENT_DATE - d_birthday)/365 as age, ch_born_place, ch_idcard_id, ch_other_features, ch_portrait_fileid, ch_edu_background, ch_job, ch_workfor, ch_phone, ch_address, ts_created_at, ts_updated_at, i_created_by, i_updated_by
+        select i_id,
+               ch_name,
+               i_sex,
+               i_height_cm,
+               d_birthday,
+               (CURRENT_DATE - d_birthday) / 365 as age,
+               ch_born_place,
+               ch_idcard_id,
+               ch_other_features,
+               ch_portrait_fileid,
+               ch_edu_background,
+               ch_job,
+               ch_workfor,
+               ch_phone,
+               ch_address,
+               ts_created_at,
+               ts_updated_at,
+               i_created_by,
+               i_updated_by
         from b_criminals
         where i_id = #{id}
+    </select>
+
+    <select id="searchCriminalByIDCard" parameterType="String" resultMap="criminalInfo">
+        select * from b_criminals
+        where ch_idcard_id = #{idCardID}
     </select>
 
     <select id="searchCriminals" resultMap="criminalInfo"
             parameterType="com.linkinghack.criminalquerymodel.transfer_model.SearchCriminalRequest">
         select bcri.i_id as i_id, ch_name, i_sex, i_height_cm, d_birthday,( CURRENT_DATE - d_birthday)/365 as age ,
         ch_born_place, ch_idcard_id, ch_other_features, ch_portrait_fileid, ch_edu_background, ch_job, ch_workfor,
-        ch_phone, ch_address, ts_created_at, ts_updated_at, i_created_by, i_updated_by
+        ch_phone, ch_address, bcri.ts_created_at as ts_created_at
+        from b_criminals as bcri
+        left join b_wanted_orders as bwant on bcri.i_id = bwant.i_criminal_id
+        <where>
+            <if test="name != null">ch_name like #{name}</if>
+            <if test="sex != null">AND i_sex = #{sex}</if>
+            <if test="heightStart != null">AND i_height_cm &gt;= #{heightStart}</if>
+            <if test="heightEnd != null">AND i_height_cm &lt;= #{heightEnd}</if>
+            <if test="ageStart != null">AND ( CURRENT_DATE - d_birthday)/365 &gt;= #{ageStart}</if>
+            <if test="ageEnd != null">AND ( CURRENT_DATE - d_birthday)/365 &lt;= #{ageEnd}</if>
+            <if test="job != null">AND ch_job like #{job}</if>
+            <if test="workFor != null">AND ch_workfor like #{workFor}</if>
+            <if test="address != null">AND ch_address like #{address}</if>
+            <if test="otherFeatures != null">AND ch_other_eatures like #{otherFeatures}</if>
+
+            <if test="arrestReason != null">AND bwant.ch_arrest_reason like #{arrestReason}</if>
+            <if test="arrestLevel != null">AND bwant.i_arrest_level = #{arrestLevel}</if>
+            <if test="arrestStatus != null">AND bwant.i_arrest_status = #{arrestStatus}</if>
+            <if test="districtID != null">bwant.i_district_id in (select ia_path_root from b_districts where i_id =
+                #{districtID})
+            </if>
+            <if test="arrestCreateTimeStart != null">AND bwant.ts_created_at &gt;= #{arrestCreateTimeStart}</if>
+            <if test="arrestCreateTimeEnd != null">AND bwant.ts_created_at &lt;= #{arrestCreateTimeEnd}</if>
+        </where>
+        group by bcri.i_id
+        order by bcri.ts_created_at desc
+        <if test="pageSize != null">limit #{pageSize}</if>
+        <if test="offset != null">offset #{offset}</if>
+    </select>
+
+    <select id="searchResultCount" resultType="Integer"
+            parameterType="com.linkinghack.criminalquerymodel.transfer_model.SearchCriminalRequest">
+        select count(1)
         from b_criminals as bcri
         left join b_wanted_orders as bwant on bcri.i_id = bwant.i_criminal_id
         <where>
@@ -99,15 +162,21 @@
     </select>
 
     <select id="getWantedOrdersOfACriminal" resultMap="wantedOrder">
-        select * from b_wanted_orders where i_criminal_id = #{criminalID}
+        select *
+        from b_wanted_orders
+        where i_criminal_id = #{criminalID}
     </select>
 
     <select id="getCluesOfACriminal" resultMap="clue">
-        select * from b_clue where i_criminal_id = #{criminalID}
+        select *
+        from b_clue
+        where i_criminal_id = #{criminalID}
     </select>
 
     <select id="getContactsOfACriminal" resultMap="criminalContactInfo">
-        select * from b_criminal_contacts where i_criminal_id = #{criminalID}
+        select *
+        from b_criminal_contacts
+        where i_criminal_id = #{criminalID}
     </select>
 
     <resultMap id="criminalInfo" type="com.linkinghack.criminalquerymodel.data_model.Criminal">
@@ -132,7 +201,7 @@
     </resultMap>
 
     <resultMap id="clue" type="com.linkinghack.criminalquerymodel.data_model.Clue">
-        <id column="i_id" property="id" />
+        <id column="i_id" property="id"/>
         <result column="i_criminal_id" property="criminalID"/>
         <result column="ch_fileids" property="fileIDs"/>
         <result column="ch_description" property="description"/>

@@ -1,5 +1,6 @@
 package com.linkinghack.criminalquerybase.service;
 
+import com.linkinghack.criminalquerybase.Constants;
 import com.linkinghack.criminalquerybase.dao.mapper.CriminalMapper;
 import com.linkinghack.criminalquerybase.dao.mapper.DistrictMapper;
 import com.linkinghack.criminalquerybase.dao.mapper.UserMapper;
@@ -8,6 +9,7 @@ import com.linkinghack.criminalquerymodel.data_model.Criminal;
 import com.linkinghack.criminalquerymodel.data_model.User;
 import com.linkinghack.criminalquerymodel.data_model.WantedOrder;
 import com.linkinghack.criminalquerymodel.transfer_model.CriminalDetailResponse;
+import com.linkinghack.criminalquerymodel.transfer_model.SearchCriminalRequest;
 import com.linkinghack.criminalquerymodel.transfer_model.UniversalResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -137,4 +140,49 @@ public class CriminalService {
         detail.setClues(clueList);
         return UniversalResponse.Ok(detail);
     }
+
+    /**
+     * 多条件模糊查找逃犯
+     * pageSize默认为10, page传递页码从0开始，将自动转换为offset
+     * @param search 搜索条件
+     * @return 搜索结果列表
+     */
+    public UniversalResponse searchCriminals(SearchCriminalRequest search) {
+        HashMap<String, Object> result = new HashMap<>();
+        // 处理日期条件前端传递不包含时间导致不能搜索精确一天的问题
+        if (search.getArrestCreateTimeEnd() != null){
+            search.setArrestCreateTimeEnd(search.getArrestCreateTimeStart().plusHours(23).plusMinutes(59).plusMinutes(59));
+        }
+
+        Integer totalCount = mapper.searchResultCount(search);
+        // 默认页大小
+        if (search.getPageSize() == null)
+            search.setPageSize(Constants.DefaultPageSize);
+        // page 转换为offSet
+        if (search.getPage() == null)
+            search.setPage(0); // 默认第一页
+        else
+            search.setPage(search.getPage() - 1); // 前端返回页码从1开始
+        // 计算offset
+        search.setOffset(search.getPage() * search.getPageSize());
+
+        List<Criminal> criminals = mapper.searchCriminals(search);
+        // 获取照片临时url
+        for (Criminal criminal : criminals) {
+            if (criminal.getPortraitFileID() != null)
+                criminal.setPortraitFileURL( fileService.getTempraryURL(criminal.getPortraitFileID(), null));
+        }
+
+        result.put("totalCount", totalCount);
+        result.put("currentPage", search.getPage());
+        result.put("criminals", criminals);
+
+        return UniversalResponse.Ok(result);
+    }
+
+    public UniversalResponse searchCriminalByIDCardID(String idCardID) {
+        List<Criminal> result = mapper.searchCriminalByIDCard(idCardID);
+        return UniversalResponse.Ok(result);
+    }
+
 }

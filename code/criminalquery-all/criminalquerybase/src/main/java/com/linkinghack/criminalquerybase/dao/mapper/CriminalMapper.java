@@ -16,14 +16,12 @@ public interface CriminalMapper {
     Criminal getCriminalInfo(Integer id);
 
     List<WantedOrder> getWantedOrdersOfACriminal(Integer criminalID);
-
     List<Clue> getCluesOfACriminal(Integer criminalID);
-
     List<CriminalContact> getContactsOfACriminal(Integer criminalID);
 
-    List<WantedOrder> getWantedOrdersOfADistrict(Integer districtID);
-
+    List<Criminal> searchCriminalByIDCard(String idCardID);
     List<Criminal> searchCriminals(SearchCriminalRequest request);
+    Integer searchResultCount(SearchCriminalRequest request);
 
     Integer createWantedOrder(WantedOrder order);
 

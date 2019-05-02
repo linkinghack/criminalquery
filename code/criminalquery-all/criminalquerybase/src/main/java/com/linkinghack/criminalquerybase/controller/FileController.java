@@ -41,4 +41,16 @@ public class FileController {
         return response;
     }
 
+    /**
+     * 通过fileID拿到临时URL,需要登录权限
+     * 用于前端异步获取url，加快页面加载速度
+     * @param fileID OSS fileID
+     * @return 临时url
+     */
+    @GetMapping("/file/url/{fileID}")
+    @ResponseBody
+    public String temporaryURL(@PathVariable("fileID") String fileID) {
+        return service.getTempraryURL(fileID, null);
+    }
+
 }

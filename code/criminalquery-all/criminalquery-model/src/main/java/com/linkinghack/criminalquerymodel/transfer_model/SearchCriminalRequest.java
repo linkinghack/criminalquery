@@ -37,4 +37,6 @@ public class SearchCriminalRequest {
     private Integer pageSize;
     private Integer page;
     private Integer offset;
+
+    private Boolean syncLoadPortraitURL;
 }

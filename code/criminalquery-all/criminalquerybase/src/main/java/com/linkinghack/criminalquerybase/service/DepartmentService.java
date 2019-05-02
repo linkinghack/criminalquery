@@ -1,5 +1,6 @@
 package com.linkinghack.criminalquerybase.service;
 
+import com.linkinghack.criminalquerybase.Constants;
 import com.linkinghack.criminalquerybase.dao.mapper.DepartmentMapper;
 import com.linkinghack.criminalquerybase.exception.AddDepartmentFailedException;
 import com.linkinghack.criminalquerymodel.data_model.Department;
@@ -88,7 +89,7 @@ public class DepartmentService {
     public UniversalResponse deleteDepartment(Integer departmentID, HttpServletRequest request) {
         User user = (User) request.getAttribute("user");
         Department department = departmentMapper.getDepartmentByID(departmentID);
-        if (user != null && user.getRole() == 1) {
+        if (user != null && user.getRole().equals(Constants.UserRoleManeger) ) {
             int rows = departmentMapper.deleteDepartment(departmentID);
             if (rows == 1){
                 logger.warn("用户{}{} 成功删除部门数据: {}", user.getUserID(), user.getRealName(), department);

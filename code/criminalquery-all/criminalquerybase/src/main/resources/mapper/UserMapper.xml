@@ -34,6 +34,22 @@
         select  users.i_id as uid, ch_user_id, ch_password_sha256, ch_email, ch_realname, i_role, i_department_id, b_activated, ch_phone,
                 department.i_id as did, ch_department_name, i_supervisor_id, i_level, i_district_id
         from b_users as users left join b_departments as department on users.i_department_id = department.i_id
+        where b_activated = true
+        <if test="nameOrID != null"> AND ch_user_id like #{nameOrID} or ch_realName like #{nameOrID}</if>
+        order by ts_created_at
+        <if test="pageSize != null">limit #{pageSize}</if>
+        <if test="offset != null">offset #{offset}</if>
+    </select>
+
+    <select id="inactivatedUsers" parameterType="com.linkinghack.criminalquerymodel.transfer_model.SearchUserRequest" resultMap="user">
+        select  users.i_id as uid, ch_user_id, ch_password_sha256, ch_email, ch_realname, i_role, i_department_id, b_activated, ch_phone,
+            department.i_id as did, ch_department_name, i_supervisor_id, i_level, i_district_id
+        from b_users as users left join b_departments as department on users.i_department_id = department.i_id
+        where b_activated = false
+        <if test="nameOrID != null"> AND ch_user_id like #{nameOrID} or ch_realName like #{nameOrID}</if>
+        order by ts_created_at
+        <if test="pageSize != null">limit #{pageSize}</if>
+        <if test="offset != null">offset #{offset}</if>
     </select>
 
     <select id="getUserDepartment" parameterType="Integer" resultMap="com.linkinghack.criminalquerybase.dao.mapper.DepartmentMapper.department">
@@ -56,4 +72,13 @@
     <update id="updatePassword" >
         update b_users set ch_password_sha256 = #{newPassword} where ch_user_id = #{userID}
     </update>
+
+    <update id="activateUser" parameterType="Integer">
+        update b_users set b_activated = true
+        where i_id = #{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="Integer">
+        delete from b_users where i_id = #{id}
+    </delete>
 </mapper>

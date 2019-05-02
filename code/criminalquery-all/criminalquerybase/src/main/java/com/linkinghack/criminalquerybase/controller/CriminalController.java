@@ -21,17 +21,18 @@ public class CriminalController {
     private final CriminalService criminalService;
 
     @Autowired
-    public CriminalController(CriminalService service){
+    public CriminalController(CriminalService service) {
         this.criminalService = service;
     }
 
     /**
      * 非直接面对用户：查询某个特定id的逃犯详细信息，用于系统展示详细信息
+     *
      * @param criminalID 逃犯id
      * @return
      */
     @GetMapping("/detailByID/{id}")
-    public UniversalResponse criminalDetailById(@PathVariable("id")Integer criminalID){
+    public UniversalResponse criminalDetailById(@PathVariable("id") Integer criminalID) {
         String fn = "<GET>[/criminal/basicInfoByID/{ID}]";
         logger.info("@Request{} criminalID:{}", fn, criminalID);
         UniversalResponse response = criminalService.getCriminalDetail(criminalID);
@@ -41,32 +42,36 @@ public class CriminalController {
 
     /**
      * 精确查找：查询某个身份证号对应的逃犯信息
+     *
      * @param idCardID 身份证号
      * @return 搜索结果
      */
     @GetMapping("/criminalByIDCard/{idCardID}")
-    public UniversalResponse criminalInfoByIdCard(@PathVariable("idCardID")String idCardID) {
+    public UniversalResponse criminalInfoByIdCard(@PathVariable("idCardID") String idCardID) {
         String fn = "<GET>[/criminal/criminalByIDCard/{idCardID}]";
-        logger.info("@Request{} idCardID:{}", fn , idCardID);
+        logger.info("@Request{} idCardID:{}", fn, idCardID);
         UniversalResponse response = criminalService.searchCriminalByIDCardID(idCardID);
         logger.info("@Response{} response:{}", fn, response);
-        return  response;
+        return response;
     }
 
     /**
      * 精确查找：电话号码
+     *
      * @param phone 电话号
      * @return
      */
     @GetMapping("/basicInfoByPhone/{phone}")
-    public UniversalResponse criminalInfoByPhone(@PathVariable("phone")String phone){
+    public UniversalResponse criminalInfoByPhone(@PathVariable("phone") String phone) {
         return UniversalResponse.Ok("ok");
     }
 
-    /** <GET>[/criminal/criminals]
+    /**
+     * <GET>[/criminal/criminals]
      * 模糊查找：按逃犯查询的多条件高级检索方法
+     *
      * @param searchCriminalRequest 检索条件
-     * @param request 用于获取当前用户
+     * @param request               用于获取当前用户
      * @return {totalCount: 123, criminals: [{},{},...]}
      */
     @GetMapping("/criminals")
@@ -75,25 +80,32 @@ public class CriminalController {
         String fn = "<GET>[/criminal/criminals]";
         User user = (User) request.getAttribute("user");
         logger.info("@Request{} request:{}, User:{}", fn, searchCriminalRequest, user);
+
+        // 是否同步加载逃犯主照片URl 的默认值处理
+        if (searchCriminalRequest.getSyncLoadPortraitURL() == null) {
+            searchCriminalRequest.setSyncLoadPortraitURL(false);
+        }
         UniversalResponse response = criminalService.searchCriminals(searchCriminalRequest);
         logger.info("@Response{} response:{}", fn, response);
         return response;
     }
 
-    /** <POST>[/criminal/basicInfo]
+    /**
+     * <POST>[/criminal/basicInfo]
      * 创建新的逃犯基本信息，若新建通缉令时库中无对应逃犯信息应该先调用此接口
+     *
      * @param criminal 逃犯基本信息
-     *   String name
-     *   Integer sex
-     *   Integer height
-     *   String birthday
-     *   String bornPlace
-     *   String idCardID
-     *   String otherFeatures
-     *   String portraitFileID
-     *   String eduBackground
-     *   String job, workFor, phone, address
-     * @param request HttpServletRequest 用于获取当前用户，来自Interceptor
+     *                 String name
+     *                 Integer sex
+     *                 Integer height
+     *                 String birthday
+     *                 String bornPlace
+     *                 String idCardID
+     *                 String otherFeatures
+     *                 String portraitFileID
+     *                 String eduBackground
+     *                 String job, workFor, phone, address
+     * @param request  HttpServletRequest 用于获取当前用户，来自Interceptor
      * @return 生成的逃犯信息，其中id已返回库中i_id
      */
     @PostMapping("/basicInfo")
@@ -105,7 +117,7 @@ public class CriminalController {
         logger.info("@Request{} user:{} | criminalInfo: {}", fn, user, criminal);
         criminal.setCreatedBy(user.getId());
         criminal.setUpdatedBy(user.getId());
-        if (criminal.getName() == null || criminal.getSex() == null){
+        if (criminal.getName() == null || criminal.getSex() == null) {
             logger.info("必要参数:姓名,性别未满足");
             return UniversalResponse.UserFail("必要参数:姓名,性别未满足");
         }
@@ -114,19 +126,21 @@ public class CriminalController {
         return response;
     }
 
-    /** <PUT>[/criminal/basicInfo]
+    /**
+     * <PUT>[/criminal/basicInfo]
      * 更新逃犯基本信息，选择性更新，仅criminalID 为必要参数
+     *
      * @param criminal 待更新逃犯信息
-     * @param request 用于获取当前用户
+     * @param request  用于获取当前用户
      * @return 更新结果
      */
     @PutMapping("/basicInfo")
     public UniversalResponse updateCriminal(@RequestBody Criminal criminal, HttpServletRequest request) {
         String fn = "<PUT>[/criminal/basicInfo]";
-        UniversalResponse response ;
+        UniversalResponse response;
         User user = (User) request.getAttribute("user");
         logger.info("@Request{}  criminal:{}, User:{}", fn, criminal, user);
-        if (criminal.getId() == null){
+        if (criminal.getId() == null) {
             response = UniversalResponse.UserFail("逃犯ID为必要参数");
         }
 
@@ -136,19 +150,21 @@ public class CriminalController {
         return response;
     }
 
-    /** <POST>[/criminal/clue]
+    /**
+     * <POST>[/criminal/clue]
      * 添加逃犯线索
-     * @param clue 线索对象, 必要参数：criminalID
+     *
+     * @param clue    线索对象, 必要参数：criminalID
      * @param request 用于获取当前用户
      * @return 添加结果
      */
     @PostMapping("/clue")
-    public UniversalResponse addClue(@RequestBody Clue clue, HttpServletRequest request){
+    public UniversalResponse addClue(@RequestBody Clue clue, HttpServletRequest request) {
         String fn = "<POST>[/criminal/clue]";
         User user = (User) request.getAttribute("user");
         UniversalResponse response;
         logger.info("@Request{} clue:{}, User:{}", fn, clue, user);
-        if (clue.getCriminalID() == null){
+        if (clue.getCriminalID() == null) {
             response = UniversalResponse.UserFail("criminalID是必要参数");
         }
 

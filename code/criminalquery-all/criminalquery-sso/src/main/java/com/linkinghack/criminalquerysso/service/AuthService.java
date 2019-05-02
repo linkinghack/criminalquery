@@ -2,7 +2,6 @@ package com.linkinghack.criminalquerysso.service;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.linkinghack.criminalquerymodel.config.StatusDefinition;
 import com.linkinghack.criminalquerymodel.data_model.User;
 import com.linkinghack.criminalquerymodel.transfer_model.UniversalResponse;
 import com.linkinghack.criminalquerysso.dao.UserMapper;
@@ -14,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.core.env.Environment;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 

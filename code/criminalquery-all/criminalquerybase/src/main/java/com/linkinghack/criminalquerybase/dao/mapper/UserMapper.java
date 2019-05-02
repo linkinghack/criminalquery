@@ -1,6 +1,7 @@
 package com.linkinghack.criminalquerybase.dao.mapper;
 import com.linkinghack.criminalquerymodel.data_model.Department;
 import com.linkinghack.criminalquerymodel.data_model.User;
+import com.linkinghack.criminalquerymodel.transfer_model.SearchUserRequest;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -20,7 +21,13 @@ public interface UserMapper {
 
     Integer updatePassword(String userID, String newPassword);
 
-    List<User> users();
+    List<User> users(SearchUserRequest request);
 
     Department getUserDepartment(Integer UID);
+
+    Integer deleteUser(Integer id);
+
+    List<User> inactivatedUsers(SearchUserRequest request);
+
+    Integer activateUser(Integer id);
 }

@@ -1,16 +1,17 @@
 package com.linkinghack.criminalquerybase.controller;
 
+import com.linkinghack.criminalquerybase.Constants;
 import com.linkinghack.criminalquerybase.service.UserService;
 import com.linkinghack.criminalquerymodel.data_model.User;
-import com.linkinghack.criminalquerymodel.transfer_model.LoginRequest;
 import com.linkinghack.criminalquerymodel.transfer_model.RegisterRequest;
+import com.linkinghack.criminalquerymodel.transfer_model.SearchUserRequest;
 import com.linkinghack.criminalquerymodel.transfer_model.UniversalResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/user")
@@ -24,56 +25,13 @@ public class UserController {
     }
 
     /**
-     *  登录鉴权接口 /auth
-     * @param loginRequest {"userID": "id", "password": "password", "remember": true}
-     * @param session session
-     * @return
-     * {
-     *     "status": 200,
-     *     "data": {
-     *         "id": 1,
-     *         "userID": "admin",
-     *         "password": null,
-     *         "email": "linkinghack@outlook.com",
-     *         "realName": "刘磊",
-     *         "role": 1,
-     *         "departmentID": 1,
-     *         "activated": true,
-     *         "phone": "18235101905",
-     *         "department": {
-     *             "id": 1,
-     *             "departmentName": "公安部",
-     *             "supervisorID": 0,
-     *             "level": 1,
-     *             "districtID": 100000,
-     *             "value": null,
-     *             "label": null
-     *         }
-     *     },
-     *     "msg": "成功"
-     * }
+     * 判断token是否有效。无逻辑，由监听器处理
+     *
+     * @return ""
      */
-    @PostMapping("/auth")
-    public UniversalResponse login(@RequestBody LoginRequest loginRequest, HttpSession session) {
-        String fn = "<POST>[/user/auth]";
-        logger.info("@request{/user/auth} userID: {}", loginRequest.getUserID());
-
-        if (loginRequest.getUserID() == null || loginRequest.getUserID().length() > 32) {
-            return UniversalResponse.UserFail("用户名长度不合法");
-        }
-        if (loginRequest.getPassword() == null || loginRequest.getPassword().length() < 6 ){
-            return UniversalResponse.UserFail("密码不合法");
-        }
-        UniversalResponse universalResponse = userService.login(loginRequest, session );
-
-        logger.info("@response{/user/auth} {}", universalResponse);
-        return universalResponse;
-    }
-
-    @PostMapping("/logout")
-    public UniversalResponse logout(HttpSession session) {
-        session.invalidate();
-        return UniversalResponse.Ok("已登出");
+    @GetMapping("/alive")
+    public UniversalResponse isAlive() {
+        return UniversalResponse.Ok("");
     }
 
     @PostMapping("/register")
@@ -83,7 +41,7 @@ public class UserController {
         if (!registerRequest.getPassword().equals(registerRequest.getConfirm()))
             return UniversalResponse.UserFail("两密码不匹配");
         User user = new User();
-        user.setUserID( registerRequest.getUserID());
+        user.setUserID(registerRequest.getUserID());
         user.setPassword(registerRequest.getPassword());
         user.setDepartmentID(registerRequest.getDepartmentID());
         user.setEmail(registerRequest.getEmail());
@@ -105,9 +63,94 @@ public class UserController {
         return response;
     }
 
+    /**
+     * 审核用户注册通过,激活账号
+     * 需要管理员权限
+     *
+     * @param uid     uid
+     * @param request 用于获取当前用户角色
+     * @return 激活结果
+     */
+    @PatchMapping("/active/{id}")
+    public UniversalResponse activateUser(@PathVariable("id") Integer uid, HttpServletRequest request) {
+        String fn = "<PATCH>[/user/active/{id}]";
+        User user = (User) request.getAttribute("user");
+        UniversalResponse response;
+        if (!user.getRole().equals(Constants.UserRoleManeger)) {
+            response = UniversalResponse.UserFail("权限不足");
+        } else {
+            response = userService.activateUser(uid);
+        }
+        logger.info("@Response{} response{}", fn, response);
+        return response;
+    }
 
-    @GetMapping("/all")
-    public UniversalResponse allUsers(HttpSession session) {
-        return userService.getAllUsers(session);
+    /**
+     * 获取所有已激活用户，用于用户管理页面
+     * 需要管理员权限
+     *
+     * @param searchUserRequest 搜索条件 {userID:<string>, pageSize:Int, page:Int(start from 1)} 可选,模糊搜索用户登录用户名
+     * @param request           用于获取当前用户
+     * @return
+     */
+    @GetMapping("/activated")
+    public UniversalResponse allUsers(SearchUserRequest searchUserRequest, HttpServletRequest request) {
+        String fn = "<GET>[/user/all]";
+        User user = (User) request.getAttribute("user");
+        logger.info("@Request{} currentUser:{}", fn, user);
+        UniversalResponse response;
+
+        if (!user.getRole().equals(Constants.UserRoleManeger)) {
+            response = UniversalResponse.UserFail("权限不足");
+        } else response = userService.getAllUsers(searchUserRequest, true);
+
+        logger.info("@Response{} response:{}", fn, response);
+        return response;
+    }
+
+    /**
+     * 获取未激活用户列表，用于新用户审批流
+     * 需要管理员权限
+     *
+     * @param searchUserRequest 搜索条件 {realNameOrID:<string>, pageSize:Int, page:Int(from 1)}
+     * @param request           用于获取当前用户
+     * @return 未激活用户列表
+     */
+    @GetMapping("/inactivated")
+    public UniversalResponse inactivatedUsers(SearchUserRequest searchUserRequest, HttpServletRequest request) {
+        String fn = "<GET>[/user/inactivated]";
+        User user = (User) request.getAttribute("user");
+        logger.info("@Request{} currentUser:{}", fn, user);
+        UniversalResponse response;
+
+        if (!user.getRole().equals(Constants.UserRoleManeger)) {
+            response = UniversalResponse.UserFail("权限不足");
+        } else {
+            response = userService.getAllUsers(searchUserRequest, false);
+        }
+        logger.info("@Response{} response:{}", fn, response);
+        return response;
+    }
+
+    /**
+     * 删除用户, 需要管理员权限
+     *
+     * @param uid     用户id
+     * @param request 用于获取当前用户
+     * @return 删除结果
+     */
+    @DeleteMapping("/{uid}")
+    public UniversalResponse deleteUser(@PathVariable("uid") Integer uid, HttpServletRequest request) {
+        String fn = "<DELETE>[/user/{uid}]";
+        User user = (User) request.getAttribute("user");
+        UniversalResponse response;
+        logger.info("@Request{}  param:uid={}, currentUser:{}", fn, uid, user);
+        if (!user.getRole().equals(Constants.UserRoleManeger)) {
+            response = UniversalResponse.UserFail("权限不足");
+        } else {
+            response = userService.deleteUser(uid);
+        }
+        logger.info("@Response{} response:{}", fn, response);
+        return response;
     }
 }

@@ -16,21 +16,21 @@
     </resultMap>
     
     <select id="selectUserByID" resultMap="user" parameterType="java.lang.Integer">
-        select  users.i_id as uid, ch_user_id, ch_password_sha256, ch_email, ch_realname, i_role, i_department_id, b_activated, ch_phone,
+        select  users.i_id as uid, ch_user_id, ch_password_sha256, ch_email, ch_realname, i_role, i_department_id, b_activated, ch_phone
         from b_users as users
         where users.i_id = #{id}
     </select>
 
     <select id="selectUserByUserID" resultMap="user" parameterType="java.lang.String">
-        select  users.i_id as uid, ch_user_id, ch_password_sha256, ch_email, ch_realname, i_role, i_department_id, b_activated, ch_phone,
-               department.i_id as did, ch_department_name, i_supervisor_id, i_level, i_district_id
-        from b_users as users left join b_departments as department on users.i_department_id = department.i_id
+        select  users.i_id as uid, ch_user_id, ch_password_sha256, ch_email, ch_realname, i_role, i_department_id, b_activated, ch_phone
+        from b_users as users
         where ch_user_id = #{userID}
     </select>
 
     <select id="users" resultMap="user">
         select  i_id as uid, ch_user_id, ch_password_sha256, ch_email, ch_realname, i_role, i_department_id, b_activated, ch_phone
         from b_users
+        where b_activated = true
     </select>
 
     <insert id="createUser" parameterType="com.linkinghack.criminalquerymodel.data_model.User" useGeneratedKeys="true">
@@ -47,4 +47,5 @@
     <update id="updatePassword" >
         update b_users set ch_password_sha256 = #{newPassword} where ch_user_id = #{userID}
     </update>
+
 </mapper>

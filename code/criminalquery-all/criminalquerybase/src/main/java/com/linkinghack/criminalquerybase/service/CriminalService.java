@@ -168,9 +168,11 @@ public class CriminalService {
 
         List<Criminal> criminals = mapper.searchCriminals(search);
         // 获取照片临时url
-        for (Criminal criminal : criminals) {
-            if (criminal.getPortraitFileID() != null)
-                criminal.setPortraitFileURL( fileService.getTempraryURL(criminal.getPortraitFileID(), null));
+        if (search.getSyncLoadPortraitURL()) {
+            for (Criminal criminal : criminals) {
+                if (criminal.getPortraitFileID() != null)
+                    criminal.setPortraitFileURL( fileService.getTempraryURL(criminal.getPortraitFileID(), null));
+            }
         }
 
         result.put("totalCount", totalCount);

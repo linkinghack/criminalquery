@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59e82878-3231-4ed6-8aa8-a58fae2e1ba6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/transfer_model/SearchUserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4b09928c-8305-48ab-92a9-2e2009ab343d.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4b09928c-8305-48ab-92a9-2e2009ab343d.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4b09928c-8305-48ab-92a9-2e2009ab343d/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4b09928c-8305-48ab-92a9-2e2009ab343d/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/transfer_model/SearchCriminalRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquery-model/src/main/java/com/linkinghack/criminalquerymodel/transfer_model/SearchCriminalRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquery-sso/src/main/java/com/linkinghack/criminalquerysso/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquery-sso/src/main/java/com/linkinghack/criminalquerysso/dao/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquery-sso/src/main/java/com/linkinghack/criminalquerysso/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquery-sso/src/main/java/com/linkinghack/criminalquerysso/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquery-sso/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquery-sso/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/CriminalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/CriminalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/dao/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/dao/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/service/CriminalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/service/CriminalService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/service/DepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/criminalquerybase/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/criminalquerybase/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -143,7 +127,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/CriminalController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="692">
+            <state relative-caret-position="1554">
               <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -155,8 +139,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="125" column="44" selection-start-line="125" selection-start-column="44" selection-end-line="125" selection-end-column="44" />
+            <state relative-caret-position="267">
+              <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -167,7 +151,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-467">
+            <state relative-caret-position="1323">
               <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -278,9 +262,10 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="1050" />
+    <option name="height" value="949" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -289,7 +274,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -480,6 +464,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -563,18 +548,19 @@
       <workItem from="1556161227338" duration="16068000" />
       <workItem from="1556238248701" duration="3583000" />
       <workItem from="1556242071433" duration="58828000" />
-      <workItem from="1556705259743" duration="17378000" />
+      <workItem from="1556705259743" duration="17451000" />
+      <workItem from="1556850738593" duration="788000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105441000" />
+    <option name="totallyTimeSpent" value="106302000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="949" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20879121" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17216118" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -596,12 +582,12 @@
       <window_info anchor="bottom" id="Java Enterprise" order="13" />
       <window_info anchor="bottom" id="Database Console" order="14" weight="0.32921812" />
       <window_info anchor="bottom" id="Messages" order="15" weight="0.32921812" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="16" visible="true" weight="0.27572018" />
+      <window_info anchor="bottom" id="Run Dashboard" order="16" weight="0.24970554" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Database" order="4" visible="true" weight="0.13492064" />
+      <window_info anchor="right" id="Database" order="4" weight="0.13492064" />
       <window_info anchor="right" id="Maven" order="5" weight="0.32967034" />
       <window_info anchor="right" id="Bean Validation" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
@@ -992,9 +978,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/CriminalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1554">
+          <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-467">
+        <state relative-caret-position="1323">
           <caret line="78" column="13" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1004,20 +1000,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/controller/CriminalController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="692">
-          <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/criminalquerybase/src/main/java/com/linkinghack/criminalquerybase/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="125" column="44" selection-start-line="125" selection-start-column="44" selection-end-line="125" selection-end-column="44" />
+        <state relative-caret-position="267">
+          <caret line="122" column="27" selection-start-line="122" selection-start-column="27" selection-end-line="122" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

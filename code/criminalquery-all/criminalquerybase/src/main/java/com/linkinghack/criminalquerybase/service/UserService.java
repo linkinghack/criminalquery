@@ -109,6 +109,11 @@ public class UserService {
         // 计算offset
         request.setOffset(request.getPageSize() * (request.getPage() - 1));
 
+        // 处理筛选条件
+        if (request.getNameOrID()!= null && request.getNameOrID().length() < 1){
+            request.setNameOrID(null);
+        }
+
         List<User> userList;
         if (isActivatedUser) {
             userList = userMapper.users(request);
@@ -124,7 +129,7 @@ public class UserService {
         result.put("users", userList);
         result.put("pageSize", request.getPageSize());
         result.put("page", request.getPage());
-        return UniversalResponse.Ok(userList);
+        return UniversalResponse.Ok(result);
     }
 
     public UniversalResponse deleteUser(Integer uid) {

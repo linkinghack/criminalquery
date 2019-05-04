@@ -71,7 +71,7 @@ public class UserController {
      * @param request 用于获取当前用户角色
      * @return 激活结果
      */
-    @PatchMapping("/active/{id}")
+    @PatchMapping("/activate/{id}")
     public UniversalResponse activateUser(@PathVariable("id") Integer uid, HttpServletRequest request) {
         String fn = "<PATCH>[/user/active/{id}]";
         User user = (User) request.getAttribute("user");

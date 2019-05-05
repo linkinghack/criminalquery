@@ -9,16 +9,16 @@
       <Comment>default administrative connection database</Comment>
       <StateNumber>567</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>763</IntrospectionStateNumber>
+      <IntrospectionStateNumber>776</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
-      <Relations>sequence|table|24667|24669|1
-sequence|table|16384|16386|1
+      <Relations>sequence|table|16384|16386|1
 sequence|table|16397|16399|1
 sequence|table|16423|16425|1
 sequence|table|16434|16436|1
 sequence|table|16455|16457|1
 sequence|table|16467|16469|1
+sequence|table|24667|24669|1
 </Relations>
     </database>
     <role id="3" parent="1" name="pg_execute_server_program">
@@ -104,7 +104,7 @@ sequence|table|16467|16469|1
       <Comment>standard public schema</Comment>
       <StateNumber>360</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>764</IntrospectionStateNumber>
+      <IntrospectionStateNumber>777</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -296,8 +296,7 @@ sequence|table|16467|16469|1
       <Position>3</Position>
       <Comment>逗号分隔的资源文件id</Comment>
       <DataType>varchar|0s</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>629</StateNumber>
+      <StateNumber>775</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="44" parent="32" name="ch_description">

@@ -85,7 +85,7 @@
                i_sex,
                i_height_cm,
                d_birthday,
-               (CURRENT_DATE - d_birthday) / 365 as age,
+               ((CURRENT_DATE - d_birthday) / 365) as age,
                ch_born_place,
                ch_idcard_id,
                ch_other_features,
@@ -183,8 +183,9 @@
         <id column="i_id" property="id"/>
         <result column="ch_name" property="name"/>
         <result column="i_sex" property="sex"/>
-        <result column="d_birthday_date" property="birthday"/>
+        <result column="d_birthday" property="birthday"/>
         <result column="age" property="age"/>
+        <result column="i_height_cm" property="height"/>
         <result column="ch_born_place" property="bornPlace"/>
         <result column="ch_idcard_id" property="idCardID"/>
         <result column="ch_other_features" property="otherFeatures"/>

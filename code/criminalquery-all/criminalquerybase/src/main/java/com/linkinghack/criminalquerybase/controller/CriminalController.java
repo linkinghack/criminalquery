@@ -85,6 +85,24 @@ public class CriminalController {
         if (searchCriminalRequest.getSyncLoadPortraitURL() == null) {
             searchCriminalRequest.setSyncLoadPortraitURL(false);
         }
+        // 处理空字符串
+        if (searchCriminalRequest.getName()!=null && searchCriminalRequest.getName().length() < 1)
+            searchCriminalRequest.setName(null);
+        if (searchCriminalRequest.getAddress()!=null && searchCriminalRequest.getAddress().length() < 1)
+            searchCriminalRequest.setAddress(null);
+        if (searchCriminalRequest.getArrestReason()!=null && searchCriminalRequest.getArrestReason().length() < 1)
+            searchCriminalRequest.setArrestReason(null);
+        if (searchCriminalRequest.getJob()!=null && searchCriminalRequest.getJob().length() < 1)
+            searchCriminalRequest.setJob(null);
+        if (searchCriminalRequest.getPhone()!=null && searchCriminalRequest.getPhone().length() < 1)
+            searchCriminalRequest.setPhone(null);
+        if (searchCriminalRequest.getEduBackground()!=null && searchCriminalRequest.getEduBackground().length() < 1)
+            searchCriminalRequest.setEduBackground(null);
+        if (searchCriminalRequest.getWorkFor()!=null && searchCriminalRequest.getWorkFor().length() < 1)
+            searchCriminalRequest.setWorkFor(null);
+        if (searchCriminalRequest.getOtherFeatures()!=null && searchCriminalRequest.getOtherFeatures().length() < 1)
+            searchCriminalRequest.setOtherFeatures(null);
+
         UniversalResponse response = criminalService.searchCriminals(searchCriminalRequest);
         logger.info("@Response{} response:{}", fn, response);
         return response;

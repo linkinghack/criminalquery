@@ -217,7 +217,7 @@ COMMENT ON COLUMN public.b_districts.ch_county_name
 CREATE TABLE public.b_clue (
     i_id SERIAL NOT NULL,
     i_criminal_id integer NOT NULL,
-    ch_fileids varchar NOT NULL,
+    ch_fileids varchar,
     ch_description varchar NOT NULL,
     ts_created_at timestamp default now() NOT NULL,
     PRIMARY KEY (i_id)

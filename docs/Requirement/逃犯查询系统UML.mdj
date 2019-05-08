@@ -7872,24 +7872,6 @@
 			]
 		},
 		{
-			"_type": "DFDDataFlowModel",
-			"_id": "AAAAAAFpy/ebstyC5M4=",
-			"_parent": {
-				"$ref": "AAAAAAFF+h6SjaM2Hec="
-			},
-			"name": "数据流",
-			"ownedElements": [
-				{
-					"_type": "DFDDiagram",
-					"_id": "AAAAAAFpy/ebs9yDSnI=",
-					"_parent": {
-						"$ref": "AAAAAAFpy/ebstyC5M4="
-					},
-					"name": "DFD-L0"
-				}
-			]
-		},
-		{
 			"_type": "ERDDataModel",
 			"_id": "AAAAAAFp1siRlZicyRo=",
 			"_parent": {

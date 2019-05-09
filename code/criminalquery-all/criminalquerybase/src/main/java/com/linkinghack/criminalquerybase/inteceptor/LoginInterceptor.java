@@ -1,9 +1,11 @@
 package com.linkinghack.criminalquerybase.inteceptor;
 
 import com.linkinghack.criminalquerymodel.data_model.User;
+import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -13,9 +15,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Component
+@ConfigurationProperties("sso")
 public class LoginInterceptor implements HandlerInterceptor {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
     private RestTemplate restTemplate;
+    @Setter
+    private String baseUrl;
 
     @Autowired
     public LoginInterceptor(RestTemplate template) {
@@ -33,6 +38,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             return false;
         }
 
+        // 向SSO单点登录系统询问Token是否有效
         User user = restTemplate.getForObject("https://api.tyut.life/sso/auth/{token}", User.class, token);
         logger.info("User from sso {}", user);
         if (user == null) {

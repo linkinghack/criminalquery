@@ -19,6 +19,30 @@ public class AuthController {
         this.authService = service;
     }
 
+    /**
+     * 登录接口
+     * @param loginRequest {userID: string,  password: string, remember: boolean}
+     * @return
+     * {
+     *     "status": 200,
+     *     "data": {
+     *         "user": {
+     *             "id": 1,
+     *             "userID": "admin",
+     *             "password": null,
+     *             "email": "linkinghack@outlook.com",
+     *             "realName": "刘磊",
+     *             "role": 1,
+     *             "departmentID": 1,
+     *             "activated": true,
+     *             "phone": "18235101905",
+     *             "department": null
+     *         },
+     *         "token": "JDEkQjVSY3Z6Z0YkM1k4UnJVdHJjQWx5Rm9ZVGIxN3ZxLg=="
+     *     },
+     *     "msg": "成功"
+     * }
+     */
     @PostMapping("/login")
     public UniversalResponse login(@RequestBody LoginRequest loginRequest) {
         String fn = "<POST>[/user/login]";

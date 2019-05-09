@@ -50,7 +50,7 @@ public class CriminalService {
     public UniversalResponse updateCriminal(Criminal criminal, User user) {
         criminal.setUpdatedBy(user.getId());
         int rowsAffected = mapper.updateCriminal(criminal);
-        return UniversalResponse.Ok("更新"+rowsAffected+"条记录");
+        return UniversalResponse.Ok("更新" + rowsAffected + "条记录");
     }
 
     public UniversalResponse createWantedOrder(Integer criminalID, String reason, Integer level, Integer status, Integer districtID, Integer createdBy) {
@@ -74,7 +74,7 @@ public class CriminalService {
 
     public UniversalResponse addClue(Clue clue) {
         int rowsAffected = mapper.addClue(clue);
-        if (rowsAffected != 1){
+        if (rowsAffected != 1) {
             return UniversalResponse.ServerFail("无法添加线索 - " + rowsAffected);
         }
         return UniversalResponse.Ok(clue);
@@ -118,7 +118,7 @@ public class CriminalService {
 
         // 通缉令
         List<WantedOrder> wantedOrders = mapper.getWantedOrdersOfACriminal(criminalID);
-        for(WantedOrder order : wantedOrders) {
+        for (WantedOrder order : wantedOrders) {
             System.out.println(order);
             order.setDistrict(districtMapper.selectDistrictById(order.getDistrictID()));
         }
@@ -144,13 +144,14 @@ public class CriminalService {
     /**
      * 多条件模糊查找逃犯
      * pageSize默认为10, page传递页码从0开始，将自动转换为offset
+     *
      * @param search 搜索条件
      * @return 搜索结果列表
      */
     public UniversalResponse searchCriminals(SearchCriminalRequest search) {
         HashMap<String, Object> result = new HashMap<>();
         // 处理日期条件前端传递不包含时间导致不能搜索精确一天的问题
-        if (search.getArrestCreateTimeEnd() != null){
+        if (search.getArrestCreateTimeEnd() != null) {
             search.setArrestCreateTimeEnd(search.getArrestCreateTimeStart().plusHours(23).plusMinutes(59).plusMinutes(59));
         }
 
@@ -171,7 +172,7 @@ public class CriminalService {
         if (search.getSyncLoadPortraitURL()) {
             for (Criminal criminal : criminals) {
                 if (criminal.getPortraitFileID() != null)
-                    criminal.setPortraitFileURL( fileService.getTempraryURL(criminal.getPortraitFileID(), null));
+                    criminal.setPortraitFileURL(fileService.getTempraryURL(criminal.getPortraitFileID(), null));
             }
         }
 

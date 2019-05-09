@@ -1,6 +1,5 @@
 package com.linkinghack.criminalquerybase.controller;
 
-import com.linkinghack.criminalquerybase.dao.mongo.DepartmentMongoOp;
 import com.linkinghack.criminalquerybase.service.DistrictService;
 import com.linkinghack.criminalquerymodel.transfer_model.UniversalResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/districts")
 public class DistrictController {
     private final DistrictService districtService;
-    private final DepartmentMongoOp mongoOp;
     @Autowired
-    public DistrictController(DistrictService service, DepartmentMongoOp mongoOp) {
-        this.mongoOp = mongoOp;
+    public DistrictController(DistrictService service) {
         this.districtService = service;
     }
 
@@ -33,10 +30,5 @@ public class DistrictController {
     @GetMapping("/subDistricts/{id}")
     public UniversalResponse subDistricts(@PathVariable("id") Integer id) {
         return districtService.getSubDistricts(id);
-    }
-
-    @GetMapping("/aggregated")
-    public UniversalResponse aggregatedDistricts() {
-        return UniversalResponse.Ok(mongoOp.aggregateDistricts());
     }
 }

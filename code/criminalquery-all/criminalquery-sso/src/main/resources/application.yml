@@ -13,9 +13,9 @@ spring:
     host: redis
     port: 6379
     password: "PC.c&Qv9z.B1Y8K"
-  data:
-    mongodb:
-      uri: mongodb://root:iCOVXGj7WqlH4Z@localhost/admin
+  # data:
+  #   mongodb:
+  #     uri: mongodb://root:iCOVXGj7WqlH4Z@localhost/admin
 
 mybatis:
   mapper-locations:

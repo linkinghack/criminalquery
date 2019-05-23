@@ -58,7 +58,7 @@ func InitPostgresDB(xlFile *xlsx.File) (districts []interface{}) {
 		log.Fatal(err)
 	}
 
-	// 读取xlsx并存入两数据库
+	// 读取xlsx并存入数据库
 	for _, sheet := range xlFile.Sheets {
 		for i, row := range sheet.Rows {
 			if i == 0 { // 跳过表头

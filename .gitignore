@@ -36,3 +36,6 @@ buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
 
 .vscode
+
+*.DS_Store
+.gitignore.swp

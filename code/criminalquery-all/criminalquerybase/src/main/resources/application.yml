@@ -34,4 +34,4 @@ oss:
   accessKeySecret: SMd3a4DFkwCtQbOOOj9WV300bm6VEz
 
 sso:
-  base-url: http://criminalquerysso
+  base-url: http://sso:8081

@@ -22,6 +22,8 @@ CREATE TABLE public.b_users (
     i_department_id integer NOT NULL,
     b_activated boolean NOT NULL,
     ch_phone varchar NOT NULL,
+    ts_created_at timestamp default now() NOT NULL,
+    ts_updated_at timestamp default now() NOT NULL,
     PRIMARY KEY (i_id)
 );
 COMMENT ON COLUMN public.b_users.ch_user_id
@@ -46,7 +48,7 @@ CREATE TABLE public.b_departments (
     i_id SERIAL NOT NULL,
     ch_department_name varchar NOT NULL,
     i_supervisor_id integer NOT NULL,
-    i_level integer NOT NULL,
+    i_level integer,
     i_district_id integer NOT NULL,
     PRIMARY KEY (i_id)
 );

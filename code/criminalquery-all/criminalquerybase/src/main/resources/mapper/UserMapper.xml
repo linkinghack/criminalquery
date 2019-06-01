@@ -65,16 +65,17 @@
 
     <update id="updateUser" parameterType="com.linkinghack.criminalquerymodel.data_model.User">
         update b_users set ch_email = #{email}, ch_password_sha256 = #{password}, ch_realName = #{realName}, i_role = #{role},
-                            i_department_id = #{departmentID}, b_activated = #{activated}, ch_phone = #{phone}
+                            i_department_id = #{departmentID}, b_activated = #{activated}, ch_phone = #{phone},
+                            ts_updated_at = now()
         where i_id = #{id}
     </update>
 
     <update id="updatePassword" >
-        update b_users set ch_password_sha256 = #{newPassword} where ch_user_id = #{userID}
+        update b_users set ch_password_sha256 = #{newPassword}, ts_updated_at = now() where ch_user_id = #{userID}
     </update>
 
     <update id="activateUser" parameterType="Integer">
-        update b_users set b_activated = true
+        update b_users set b_activated = true, ts_updated_at = now()
         where i_id = #{id}
     </update>
 

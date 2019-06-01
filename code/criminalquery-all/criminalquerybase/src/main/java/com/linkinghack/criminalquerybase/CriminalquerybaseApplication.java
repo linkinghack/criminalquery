@@ -28,7 +28,7 @@ public class CriminalquerybaseApplication {
                 registry.addMapping("/**")
                         .allowedMethods("POST","PUT","PATCH","DELETE","HEAD","GET")
                         .allowCredentials(true)
-                        .allowedOrigins("https://tyut.life","http://tyut.life");
+                        .allowedOrigins("https://tyut.life","http://tyut.life", "https://grad.linkinghack.com");
             }
         };
     }

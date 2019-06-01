@@ -39,7 +39,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         }
 
         // 向SSO单点登录系统询问Token是否有效
-        User user = restTemplate.getForObject("https://api.tyut.life/sso/auth/{token}", User.class, token);
+        User user = restTemplate.getForObject(baseUrl + "/auth/{token}", User.class, token);
         logger.info("User from sso {}", user);
         if (user == null) {
             logger.info("API request rejected because of unknown token: token={}", token);
